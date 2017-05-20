@@ -1,4 +1,4 @@
-# Concept Library Source UML Models
+# Concept Library Source SMIF-UML Models
 A library of concepts for integration and reuse. The federated concept library is a modular reference library that can be used directly in application models, subset or used as a mapping hub. These concepts are defined using a general and domain independent approach that makes minimal assertions as to how the concepts may be used.
 
 Models under "SourceModels" are managed with Nomagic Magicdraw(r). A free reader is available here: https://www.nomagic.com/products/magicdraw
