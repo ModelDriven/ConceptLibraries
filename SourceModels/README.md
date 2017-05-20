@@ -5,6 +5,7 @@ Models are managed with Nomagic Magicdraw(r). A free reader is available here: h
 
 A web view of the concept library is available on: http://models.modeldriven.org/concepts/ConceptLibrary.html
 
+Note: it is intended that the model modules be loosely coupled and separated into individual model files. All modules are currently in one model file for easier management.
 
 Copyright (c) Data Access Technologies, Inc. 
 
