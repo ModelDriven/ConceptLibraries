@@ -7,8 +7,11 @@ It utilizes the "Semantic Information Modeling for Federation" specification, a 
 Many of the concepts are derived from work on threat and risk information sharing, but the concept library is not specific to that purpose.
 
 A web view of the concept library is available on: http://models.modeldriven.org/concepts/ConceptLibrary.html
+
 The SMIF Specification is available here: https://github.com/ModelDriven/SIMF/
+
 The threat/risk specification is available here: https://github.com/ModelDriven/ThreatRisk/
 
 Copyright (c) Data Access Technologies, Inc. 
+
 The concept library is freely available under the GNU public license: https://github.com/ModelDriven/ConceptLibrary/blob/master/LICENSE
