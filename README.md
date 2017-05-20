@@ -12,6 +12,8 @@ The SMIF Specification is available here: https://github.com/ModelDriven/SIMF/
 
 The threat/risk specification is available here: https://github.com/ModelDriven/ThreatRisk/
 
+Note: Processes and legalities for community contributions are still being worked out. Please contact us if you are interested in participating at: concept-info (at) modeldriven.org
+
 Copyright (c) Data Access Technologies, Inc. 
 
 The concept library is freely available under the GNU public license: https://github.com/ModelDriven/ConceptLibrary/blob/master/LICENSE
