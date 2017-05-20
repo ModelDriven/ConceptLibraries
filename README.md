@@ -6,7 +6,11 @@ Concepts that are common across many domains and purposes such that they may be 
 It utilizes the "Semantic Information Modeling for Federation" specification, a draft standard in progress at the Object Management Group.
 Many of the concepts are derived from work on threat and risk information sharing, but the concept library is not specific to that purpose.
 
+The concept library glossary can be found here: http://models.modeldriven.org/concepts/ConceptLibraryGlossary.html
+
 A web view of the concept library is available on: http://models.modeldriven.org/concepts/ConceptLibrary.html
+
+An OWL/RDF for of the concept library can be found here: (in progress)
 
 The SMIF Specification is available here: https://github.com/ModelDriven/SIMF/
 
