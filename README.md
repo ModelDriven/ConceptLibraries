@@ -1,5 +1,5 @@
 # Concept Libraries
-A library of concepts for integration and reuse.
+A library of concepts for integration, federation, analytics and reuse.
 
 Concepts that are common across many domains and purposes such that they may be used as needed to federate and translate  information across organizations, systems and domains. Also known as "Micro theories" in logic. This set of libraries provides reference concepts intended for broad scale integration, federation, analytics, big data and information sharing. An initial library is included.
 
