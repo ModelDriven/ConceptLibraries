@@ -10,7 +10,8 @@ Resources
 There are currently three SMIF based concept libraries, FIBO, the federated concept library and the threat-risk library.
 
 * The [federated concept library glossary](http://models.modeldriven.org/concepts/ConceptLibraryGlossary.html)
-* A [web view of the federated concept library odels](http://models.modeldriven.org/concepts/ConceptLibrary.html)
+* A [web view of the federated concept library models](http://models.modeldriven.org/concepts/ConceptLibrary.html)
+* [Federated threat and risk concepts](https://github.com/ModelDriven/ConceptLibraries/tree/master/Libraries/ThreatRiskLibrary)
 * An OWL/RDF for of the federated concept library can be found here: (in progress)
 * The [Financial Business Ontology *FIBO*](https://spec.edmcouncil.org/fibo/)
 * The [SMIF Specification](https://github.com/ModelDriven/SIMF/)
