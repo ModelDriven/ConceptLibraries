@@ -4,7 +4,7 @@ A library of concepts for integration and reuse. The federated concept library i
 Resources
 ---------
 
-* Models under "SourceModels" are managed with Nomagic Magicdraw(r). A free reader is available here: https://www.nomagic.com/products/magicdraw
+* Models under "SourceModels" are managed with Nomagic Magicdraw(r). A [free reader is available](https://www.nomagic.com/products/magicdraw)
 
 * A web view of the [concept library glossary](http://models.modeldriven.org/concepts/ConceptLibraryGlossary.html)
 
@@ -14,6 +14,6 @@ Note: it is intended that the model modules be loosely coupled and separated int
 
 Copyright (c) Data Access Technologies, Inc. 
 
-The concept library is freely available under the GNU public license: https://github.com/ModelDriven/ConceptLibrary/blob/master/LICENSE
+The concept library is freely available under the [GNU public license](https://github.com/ModelDriven/ConceptLibrary/blob/master/LICENSE)
 
 * Macgicdraw is a trademark of [Nomagic, Inc.](https://www.nomagic.com/)
