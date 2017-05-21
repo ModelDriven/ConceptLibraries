@@ -7,8 +7,9 @@ It utilizes the "Semantic Information Modeling for Federation" specification, a 
 Many of the concepts are derived from work on threat and risk information sharing, but the concept library is not specific to that purpose.
 
 There are currently two SMIF based concept libraries, FIBO and the federated concept library.
+##Resources
 
-The federated concept library glossary can be found here: http://models.modeldriven.org/concepts/ConceptLibraryGlossary.html
+The [federated concept library glossary] (http://models.modeldriven.org/concepts/ConceptLibraryGlossary.html}
 
 A web view of the federated concept library is available on: http://models.modeldriven.org/concepts/ConceptLibrary.html
 
