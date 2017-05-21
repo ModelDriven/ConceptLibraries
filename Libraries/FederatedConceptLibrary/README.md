@@ -1,11 +1,14 @@
 # Concept Library Source SMIF-UML Models
 A library of concepts for integration and reuse. The federated concept library is a modular reference library that can be used directly in application models, subset or used as a mapping hub. These concepts are defined using a general and domain independent approach that makes minimal assertions as to how the concepts may be used.
 
-Models under "SourceModels" are managed with Nomagic Magicdraw(r). A free reader is available here: https://www.nomagic.com/products/magicdraw
+Resources
+---------
 
-A web view of the concept library glossary is available on: http://models.modeldriven.org/concepts/ConceptLibraryGlossary.html
+* Models under "SourceModels" are managed with Nomagic Magicdraw(r). A free reader is available here: https://www.nomagic.com/products/magicdraw
 
-A web view of the concept library model is available on: http://models.modeldriven.org/concepts/ConceptLibrary.html
+* A web view of the [concept library glossary](http://models.modeldriven.org/concepts/ConceptLibraryGlossary.html)
+
+* A web view of the [concept library model](http://models.modeldriven.org/concepts/ConceptLibrary.html)
 
 Note: it is intended that the model modules be loosely coupled and separated into individual model files. All modules are currently in one model file for easier management.
 
@@ -13,4 +16,4 @@ Copyright (c) Data Access Technologies, Inc.
 
 The concept library is freely available under the GNU public license: https://github.com/ModelDriven/ConceptLibrary/blob/master/LICENSE
 
-* Macgicdraw is a trademark of Nomagic, Inc. (https://www.nomagic.com/)
+* Macgicdraw is a trademark of [Nomagic, Inc.](https://www.nomagic.com/)
