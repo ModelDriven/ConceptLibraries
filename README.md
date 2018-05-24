@@ -11,9 +11,9 @@ Resources
 
 There are currently three SMIF based concept libraries, FIBO, the federated concept library and threat/risk concepts
 
-* The federated concept library glossary can be found here: http://models.modeldriven.org/concepts/ConceptLibraryGlossary.html
+* The federated concept library glossary can be found here: http://models.modeldriven.org/models/concepts/ConceptLibraryGlossary.html
 
-* A web view of the federated concept library is available on: http://models.modeldriven.org/concepts/ConceptLibrary.html
+* A web view of the federated concept library is available on: http://models.modeldriven.org/models/concepts/ConceptLibrary.html
 
 * An OWL/RDF for of the federated concept library can be found here: (in progress)
 
