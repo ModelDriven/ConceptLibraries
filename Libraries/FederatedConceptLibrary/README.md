@@ -6,9 +6,9 @@ Resources
 
 * Models under "SourceModels" are managed with Nomagic Magicdraw(r). A [free reader is available](https://www.nomagic.com/products/magicdraw)
 
-* A web view of the [concept library glossary](http://models.modeldriven.org/concepts/ConceptLibraryGlossary.html)
+* A web view of the [concept library glossary](http://models.modeldriven.org/models/concepts/ConceptLibraryGlossary.html)
 
-* A web view of the [concept library model](http://models.modeldriven.org/concepts/ConceptLibrary.html)
+* A web view of the [concept library model](http://models.modeldriven.org/models/concepts/ConceptLibrary.html)
 
 Note: it is intended that the model modules be loosely coupled and separated into individual model files. All modules are currently in one model file for easier management.
 
@@ -19,7 +19,7 @@ The threat-risk archive provides for public access to and comment on the candida
 
 Resources
 ---------
-* [WEB view of the threat/risk concept models](http://threatrisk.org/spec/Threat%20Risk%20Model.html)
+* [WEB view of the threat/risk concept models](http://models.modeldriven.org/models/ThreatRisk/Threat%20Risk%20Model.html)
 
 Copyright (c) 2018 Model Driven Solutions, Inc.
 The concept library is freely available under the [GNU public license](https://github.com/ModelDriven/ConceptLibrary/blob/master/LICENSE)
