@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns="https://www.omg.org/spec/MDMI/MDMIExampleReferenceMode#"
+     xml:base="https://www.omg.org/spec/MDMI/MDMIExampleReferenceMode"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://www.omg.org/spec/MDMI/MDMIExampleReferenceMode">
+        <owl:imports rdf:resource="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel"/>
+        <owl:imports rdf:resource="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode"/>
+        <owl:imports rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MDMI Element Reference Model</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://www.omg.org/spec/MDMI/MDMIExample/allergyObservationHasStartTime -->
+
+
+    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/allergyObservationHasStartTime">
+        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/hasStartDateTime"/>
+        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/AllergicReactionObservation"/>
+        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Date"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">allergy observation has start time</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the statementcontext property and the dataelementconcept property for a mdmibusinesselement</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.omg.org/spec/MDMI/MDMIExample/immunizationResultActivityHasStartTime -->
+
+
+    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/immunizationResultActivityHasStartTime">
+        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/hasStartDateTime"/>
+        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/ImmunizationActivity"/>
+        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Date"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immunization result activity has start time</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the statementcontext property and the dataelementconcept property for a mdmibusinesselement</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.omg.org/spec/MDMI/MDMIExample/vitalSignResultObservationHasAutherPersonName -->
+
+
+    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/vitalSignResultObservationHasAutherPersonName">
+        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/hasAuthorPersonLegalName"/>
+        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/VitalSignObservation"/>
+        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Name"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vital sign result observation has author person name</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the statementcontext property and the dataelementconcept property for this mdmibusinesselement</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.omg.org/spec/MDMI/MDMIExample/vitalSignResultObservationHasStartTime -->
+
+
+    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/vitalSignResultObservationHasStartTime">
+        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/hasStartDateTime"/>
+        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/VitalSignObservation"/>
+        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Date"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vital sign result observation has start time</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the statementcontext property and the dataelementconcept property for this mdmibusinesselement</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://www.omg.org/spec/MDMI/MDMIExample/encounterHasId -->
+
+
+    <owl:DatatypeProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/encounterHasId"/>
+    
+
+
+    <!-- https://www.omg.org/spec/MDMI/MDMIExample/immunizationResultActivityHasID -->
+
+
+    <owl:DatatypeProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/immunizationResultActivityHasID"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://www.omg.org/spec/MDMI/MDMIExample/AllergicReactionObservation -->
+
+
+    <rdf:Description rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/AllergicReactionObservation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/allergyObservationHasStartTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.omg.org/spec/MDMI/MDMIExample/ImmunizationActivity -->
+
+
+    <rdf:Description rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/ImmunizationActivity">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/immunizationResultActivityHasStartTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.omg.org/spec/MDMI/MDMIExample/VitalSignObservation -->
+
+
+    <rdf:Description rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/VitalSignObservation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/vitalSignResultObservationHasStartTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.0.2.20160507-1747) https://github.com/owlcs/owlapi/ -->
+
+
+
+
+
+<!-- Warning: type declarations were not added automatically. -->
+
+
+<!-- Generated using the No Magic Cameo Concept Modeler (19.0 SP3, build 20190909_1921-137b5364) on 2020-02-22 at 15:58:06 GMT -->
