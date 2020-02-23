@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns="https://www.omg.org/spec/MDMI/MDMIExample/"
-     xml:base="https://www.omg.org/spec/MDMI/MDMIExample/"
+<!DOCTYPE rdf:RDF [
+<!ENTITY MDMI-GSM "https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/">
+<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+<!ENTITY CCM "http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/">
+]>
+<rdf:RDF xmlns="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/"
+     xml:base="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/"
+     xmlns:MDMI-GSM="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/"
      xmlns:dct="http://purl.org/dc/terms/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -8,25 +14,23 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core/"
      xmlns:sm="http://www.omg.org/techprocess/ab/SpecificationMetadata/"
+     xmlns:CCM="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel">
         <owl:versionIRI rdf:resource="https://www.omg.org/spec/MDMI/20191101/MDMIExample/"/>
         <owl:imports rdf:resource="http://www.omg.org/techprocess/ab/SpecificationMetadata/"/>
-        <owl:imports rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/"/>
-        <owl:imports rdf:resource="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode"/>
-        <owl:imports rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample"/>
         <owl:imports rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/"/>
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
-        <sm:contentLanguage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/standards/techs/owl#w3c_all</sm:contentLanguage>
-        <dct:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology represents an example of what could be done to represent MDMI Healthcare Business Elements.  It is only a limited example, and is non-normative. A properly modularized set of patterns that could be used with MDMI for representing business elements is out of scope for this submission, and is anticipated to be developed in the future.</dct:abstract>
-        <sm:copyright rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Copyright (c) 2019 MDIX, Inc.</sm:copyright>
-        <sm:copyright rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Copyright (c) 2019 Object Management Group, Inc.</sm:copyright>
-        <sm:filename rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MDMIExample.rdf</sm:filename>
-        <sm:fileAbbreviation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mdmi</sm:fileAbbreviation>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Model Driven Message Interoperability Data Model Expressed in OWL</rdfs:label>
-        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MDMI</skos:altLabel>
-        <sm:copyright rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Copyright (c) 2019 Model Driven Solutions</sm:copyright>
-        <dct:license rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://opensource.org/licenses/MIT</dct:license>
+        <sm:contentLanguage rdf:datatype="&xsd;anyURI">http://www.w3.org/standards/techs/owl#w3c_all</sm:contentLanguage>
+        <sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019 MDIX, Inc.</sm:copyright>
+        <dct:abstract rdf:datatype="&xsd;string">This ontology represents an example of what could be done to represent MDMI Healthcare Business Elements.  It is only a limited example, and is non-normative. A properly modularized set of patterns that could be used with MDMI for representing business elements is out of scope for this submission, and is anticipated to be developed in the future.</dct:abstract>
+        <sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019 Object Management Group, Inc.</sm:copyright>
+        <sm:filename rdf:datatype="&xsd;string">MDMIGenericStatementModel.rdf</sm:filename>
+        <sm:fileAbbreviation rdf:datatype="&xsd;string">mdmigsm</sm:fileAbbreviation>
+        <rdfs:label rdf:datatype="&xsd;string">Model Driven Message Interoperability Data Model Expressed in OWL</rdfs:label>
+        <skos:altLabel rdf:datatype="&xsd;string">MDMI-GSM</skos:altLabel>
+        <sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019 Model Driven Solutions</sm:copyright>
+        <dct:license rdf:datatype="&xsd;anyURI">http://opensource.org/licenses/MIT</dct:license>
     </owl:Ontology>
     
 
@@ -46,21 +50,21 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/StatementMode -->
 
 
-    <rdf:Description rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/StatementMode">
+    <rdf:Description rdf:about="&MDMI-GSM;StatementMode">
         <owl:equivalentClass>
             <rdfs:Datatype>
                 <owl:oneOf>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">assertion</rdf:first>
+                        <rdf:first rdf:datatype="&xsd;string">assertion</rdf:first>
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enquery</rdf:first>
+                                <rdf:first rdf:datatype="&xsd;string">inquiry</rdf:first>
                                 <rdf:rest>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negation</rdf:first>
+                                        <rdf:first rdf:datatype="&xsd;string">negation</rdf:first>
                                         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                                     </rdf:Description>
                                 </rdf:rest>
@@ -89,9 +93,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/about -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/about">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the topic of some statement, fact, record, or opinion</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;about">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
+        <rdfs:label rdf:datatype="&xsd;string">about</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the topic of some statement, fact, record, or opinion</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -99,12 +104,12 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/aboutParticipant -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/aboutParticipant">
-        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/about"/>
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Participant"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">about participant</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the participant that is the subject of some statement, fact, record, or belief</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;aboutParticipant">
+        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;about"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Participant"/>
+        <rdfs:label rdf:datatype="&xsd;string">about participant</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the participant that is the subject of some statement, fact, record, or belief</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -112,12 +117,12 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/formsOpinion -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/formsOpinion">
-        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/resultsIn"/>
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Activity"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Opinion"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forms opinion</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an opinion resulting from an activity</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;formsOpinion">
+        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;resultsIn"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;Activity"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Opinion"/>
+        <rdfs:label rdf:datatype="&xsd;string">forms opinion</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an opinion resulting from an activity</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -125,11 +130,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasAuthor -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasAuthor">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Statement"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Author"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has author</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">associates an author with a statement</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasAuthor">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Statement"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Author"/>
+        <rdfs:label rdf:datatype="&xsd;string">has author</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">associates an author with a statement</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -137,15 +142,15 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasAuthorOrganizationLegalName -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasAuthorOrganizationLegalName">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Statement"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Name"/>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasAuthorOrganizationLegalName">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Statement"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasAuthor"/>
-            <rdf:Description rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasOrganizationLegalName"/>
+            <rdf:Description rdf:about="&MDMI-GSM;hasAuthor"/>
+            <rdf:Description rdf:about="&MDMI-GSM;hasOrganizationLegalName"/>
         </owl:propertyChainAxiom>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has author organization legal name</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">associates an organization with an author person legal name</skos:definition>
+        <rdfs:label rdf:datatype="&xsd;string">has author organization legal name</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">associates an organization with an author person legal name</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -153,15 +158,15 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasAuthorPersonLegalName -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasAuthorPersonLegalName">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Statement"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Name"/>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasAuthorPersonLegalName">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Statement"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasAuthor"/>
-            <rdf:Description rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasPersonLegalName"/>
+            <rdf:Description rdf:about="&MDMI-GSM;hasAuthor"/>
+            <rdf:Description rdf:about="&MDMI-GSM;hasPersonLegalName"/>
         </owl:propertyChainAxiom>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has author person legal name</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">associates an author with a person legal name</skos:definition>
+        <rdfs:label rdf:datatype="&xsd;string">has author person legal name</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">associates an author with a person legal name</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -169,11 +174,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasClassification -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasClassification">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Performanceofactionfocus"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has classification</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">classification is a property of any entity representing an extended type or category of the entity. Also known as &quot;focus&quot; in ANF.</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasClassification">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Classification"/>
+        <rdfs:label rdf:datatype="&xsd;string">has classification</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">classification is a property of any entity representing an extended type or category of the entity. Also known as &quot;focus&quot; in ANF.</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -181,11 +186,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasDevice -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasDevice">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/DeviceActivityMethod"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Device"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has device</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">device used for an activity</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasDevice">
+        <rdfs:domain rdf:resource="&MDMI-GSM;DeviceActivityMethod"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Device"/>
+        <rdfs:label rdf:datatype="&xsd;string">has device</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">device used for an activity</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -193,12 +198,12 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasDeviceName -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasDeviceName">
-        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/hasName"/>
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Device"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Name"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has device name</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">associates a name with a device</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasDeviceName">
+        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;hasName"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;Device"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
+        <rdfs:label rdf:datatype="&xsd;string">has device name</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">associates a name with a device</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -206,11 +211,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasEndDateTime -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasEndDateTime">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Temporal"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Date"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has end date time</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">date and time at which a temporal entity started or will end</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasEndDateTime">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Temporal"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Date"/>
+        <rdfs:label rdf:datatype="&xsd;string">has end date time</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">date and time at which a temporal entity started or will end</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -218,12 +223,12 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasLegalName -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasLegalName">
-        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/hasName"/>
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/ResponsibleActor"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Name"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has legal name</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">associates a</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasLegalName">
+        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;hasName"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;ResponsibleActor"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
+        <rdfs:label rdf:datatype="&xsd;string">has legal name</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">associates a</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -231,11 +236,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasMethod -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasMethod">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Activity"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/ActivityMethod"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has method</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the method for executing an activity</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasMethod">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Activity"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;ActivityMethod"/>
+        <rdfs:label rdf:datatype="&xsd;string">has method</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the method for executing an activity</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -243,11 +248,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasName -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasName">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Entity"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Name"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has name</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an association of name to Entity</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasName">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Entity"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
+        <rdfs:label rdf:datatype="&xsd;string">has name</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an association of name to Entity</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -255,12 +260,12 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasOrganizationLegalName -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasOrganizationLegalName">
-        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/hasLegalName"/>
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Organization"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Name"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has organization legal name</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a dataelementconcept property to be associated with a mdmibusinesselement</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasOrganizationLegalName">
+        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;hasLegalName"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;Organization"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
+        <rdfs:label rdf:datatype="&xsd;string">has organization legal name</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a dataelementconcept property to be associated with a mdmibusinesselement</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -268,11 +273,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasParticipant -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasParticipant">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Participant"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has participant</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an association of participant to a situation</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasParticipant">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Participant"/>
+        <rdfs:label rdf:datatype="&xsd;string">has participant</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an association of participant to a situation</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -280,12 +285,12 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasPerformer -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasPerformer">
-        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/hasParticipant"/>
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Occurance"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Performer"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has performer</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an association of performer to a situation</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasPerformer">
+        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;hasParticipant"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;Occurence"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Performer"/>
+        <rdfs:label rdf:datatype="&xsd;string">has performer</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an association of performer to a situation</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -293,12 +298,12 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasPersonLegalName -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasPersonLegalName">
-        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/hasLegalName"/>
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Person"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Name"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has person legal name</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">associates the property of person legal name with organization</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasPersonLegalName">
+        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;hasLegalName"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;Person"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
+        <rdfs:label rdf:datatype="&xsd;string">has person legal name</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">associates the property of person legal name with organization</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -306,11 +311,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasPurpose -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasPurpose">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Activity"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/ReferenceRange"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has purpose</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">associates a purpose with an activity </skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasPurpose">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Activity"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Classification"/>
+        <rdfs:label rdf:datatype="&xsd;string">has purpose</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">associates a purpose with an activity </skos:definition>
     </owl:ObjectProperty>
     
 
@@ -318,11 +323,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasStartDateTime -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasStartDateTime">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Temporal"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Date"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has start date time</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">associates the date and time started or will start for a temporal entity </skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasStartDateTime">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Temporal"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Date"/>
+        <rdfs:label rdf:datatype="&xsd;string">has start date time</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">associates the date and time started or will start for a temporal entity </skos:definition>
     </owl:ObjectProperty>
     
 
@@ -330,11 +335,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasStatus -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasStatus">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Status"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has status</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">associates a status with a situation</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasStatus">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Status"/>
+        <rdfs:label rdf:datatype="&xsd;string">has status</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">associates a status with a situation</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -342,12 +347,12 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/heldBy -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/heldBy">
-        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/hasParticipant"/>
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Opinion"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Performer"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">held by</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the individual having an opinion</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;heldBy">
+        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;hasParticipant"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;Opinion"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Performer"/>
+        <rdfs:label rdf:datatype="&xsd;string">held by</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the individual having an opinion</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -355,10 +360,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/impacts -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/impacts">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a situation changed by another</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;impacts">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Situation"/>
+        <skos:definition rdf:datatype="&xsd;string">a situation changed by another</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -366,12 +371,12 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/isOpinionAbout -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/isOpinionAbout">
-        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/about"/>
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Opinion"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is opinion about</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a situation which is the subject of an opinion</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;isOpinionAbout">
+        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;about"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;Opinion"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Situation"/>
+        <rdfs:label rdf:datatype="&xsd;string">is opinion about</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a situation which is the subject of an opinion</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -379,12 +384,12 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/isStatementAbout -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/isStatementAbout">
-        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/about"/>
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Statement"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is statement about</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a situation that is the subject of a statement</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;isStatementAbout">
+        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;about"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;Statement"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Situation"/>
+        <rdfs:label rdf:datatype="&xsd;string">is statement about</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a situation that is the subject of a statement</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -392,11 +397,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/mesurementValue -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/mesurementValue">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Result"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Number"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has numeric value</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a property for measure</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;mesurementValue">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Result"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Quantity"/>
+        <rdfs:label rdf:datatype="&xsd;string">has numeric value</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a property for measure</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -404,10 +409,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/observes -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/observes">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Observation"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">to see, watch, perceive, or notice</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;observes">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Observation"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Situation"/>
+        <rdfs:label rdf:datatype="&xsd;string">observes</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">to see, watch, perceive, or notice</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -415,11 +421,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/occursOn -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/occursOn">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Temporal"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Date"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">occurs on</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the point in time during which something happens</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;occursOn">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Temporal"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Date"/>
+        <rdfs:label rdf:datatype="&xsd;string">occurs on</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the point in time during which something happens</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -427,11 +433,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/qualityValue -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/qualityValue">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Quality"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Value"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality value</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an association between quality and Value</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;qualityValue">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Quality"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Value"/>
+        <rdfs:label rdf:datatype="&xsd;string">quality value</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an association between quality and Value</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -439,11 +445,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/repetitionCount -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/repetitionCount">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Repetitive"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Number"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">repetition count</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">how many times the situation should be or has been repeated</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;repetitionCount">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Repetitive"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Quantity"/>
+        <rdfs:label rdf:datatype="&xsd;string">repetition count</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">how many times the situation should be or has been repeated</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -451,11 +457,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/repetitionDuration -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/repetitionDuration">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Repetitive"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Duration"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">repetition duration</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">how long every action takes</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;repetitionDuration">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Repetitive"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Duration"/>
+        <rdfs:label rdf:datatype="&xsd;string">repetition duration</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">how long every action takes</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -463,11 +469,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/repetitionFrequency -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/repetitionFrequency">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Repetitive"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Duration"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">repetition frequency</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">how often they occur</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;repetitionFrequency">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Repetitive"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Duration"/>
+        <rdfs:label rdf:datatype="&xsd;string">repetition frequency</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">how often they occur</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -475,11 +481,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/repetitionSeparation -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/repetitionSeparation">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Repetitive"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Duration"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">repetition separation</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">how long between action</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;repetitionSeparation">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Repetitive"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Duration"/>
+        <rdfs:label rdf:datatype="&xsd;string">repetition separation</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">how long between action</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -487,11 +493,12 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/requests -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/requests">
-        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/impacts"/>
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/RequestEvent"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Activity"/>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an appeal for a desired activity</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;requests">
+        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;impacts"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;RequestEvent"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Activity"/>
+        <rdfs:label rdf:datatype="&xsd;string">requests</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an appeal for a desired activity</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -499,12 +506,12 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/resultsIn -->
 
 
-    <owl:ObjectProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/resultsIn">
-        <rdfs:subPropertyOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/impacts"/>
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Occurance"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">results in</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">leads to an outcome</skos:definition>
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;resultsIn">
+        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;impacts"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;Occurence"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;Situation"/>
+        <rdfs:label rdf:datatype="&xsd;string">results in</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">leads to an outcome</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -524,11 +531,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasId -->
 
 
-    <owl:DatatypeProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/hasId">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Entity"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has id</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the association of Identifier to Entity</skos:definition>
+    <owl:DatatypeProperty rdf:about="&MDMI-GSM;hasId">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Entity"/>
+        <rdfs:label rdf:datatype="&xsd;string">has id</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the association of Identifier to Entity</skos:definition>
     </owl:DatatypeProperty>
     
 
@@ -536,11 +542,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/statementHasMode -->
 
 
-    <owl:DatatypeProperty rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/statementHasMode">
-        <rdfs:domain rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Statement"/>
-        <rdfs:range rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/StatementMode"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">statement has mode</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the intended interpretation of a statement</skos:definition>
+    <owl:DatatypeProperty rdf:about="&MDMI-GSM;statementHasMode">
+        <rdfs:domain rdf:resource="&MDMI-GSM;Statement"/>
+        <rdfs:range rdf:resource="&MDMI-GSM;StatementMode"/>
+        <rdfs:label rdf:datatype="&xsd;string">statement has mode</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the intended interpretation of a statement</skos:definition>
     </owl:DatatypeProperty>
     
 
@@ -554,120 +560,27 @@
      -->
 
 
-    
-
-
-    <!-- http://www.omg.org/techprocess/ab/SpecificationMetadata/BibliographicCitation -->
-
-
-    <rdf:Description rdf:about="http://www.omg.org/techprocess/ab/SpecificationMetadata/BibliographicCitation">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.omg.org/techprocess/ab/SpecificationMetadata/IssueResolution -->
-
-
-    <rdf:Description rdf:about="http://www.omg.org/techprocess/ab/SpecificationMetadata/IssueResolution">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.omg.org/techprocess/ab/SpecificationMetadata/MediaType -->
-
-
-    <rdf:Description rdf:about="http://www.omg.org/techprocess/ab/SpecificationMetadata/MediaType">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.omg.org/techprocess/ab/SpecificationMetadata/Module -->
-
-
-    <rdf:Description rdf:about="http://www.omg.org/techprocess/ab/SpecificationMetadata/Module">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.omg.org/techprocess/ab/SpecificationMetadata/Organization -->
-
-
-    <rdf:Description rdf:about="http://www.omg.org/techprocess/ab/SpecificationMetadata/Organization">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.omg.org/techprocess/ab/SpecificationMetadata/Specification -->
-
-
-    <rdf:Description rdf:about="http://www.omg.org/techprocess/ab/SpecificationMetadata/Specification">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.omg.org/techprocess/ab/SpecificationMetadata/SpecificationFamily -->
-
-
-    <rdf:Description rdf:about="http://www.omg.org/techprocess/ab/SpecificationMetadata/SpecificationFamily">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.omg.org/techprocess/ab/SpecificationMetadata/SpecificationVersion -->
-
-
-    <rdf:Description rdf:about="http://www.omg.org/techprocess/ab/SpecificationMetadata/SpecificationVersion">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.omg.org/techprocess/ab/SpecificationMetadata/TypeOfContent -->
-
-
-    <rdf:Description rdf:about="http://www.omg.org/techprocess/ab/SpecificationMetadata/TypeOfContent">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#OrderedCollection -->
-
-
-    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#OrderedCollection">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
-    </rdf:Description>
-    
-
-
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Activity -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Activity">
+    <owl:Class rdf:about="&MDMI-GSM;Activity">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/InterventionActivity"/>
-                    <rdf:Description rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Observation"/>
+                    <rdf:Description rdf:about="&MDMI-GSM;InterventionActivity"/>
+                    <rdf:Description rdf:about="&MDMI-GSM;Observation"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Occurance"/>
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Occurence"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/hasPurpose"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="&MDMI-GSM;hasPurpose"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activity</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an occurrence performed by one or more performers intended to meet a need. A.K.A. a process.</skos:definition>
+        <rdfs:label rdf:datatype="&xsd;string">activity</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an occurrence performed by one or more performers intended to meet a need. A.K.A. a process.</skos:definition>
     </owl:Class>
     
 
@@ -675,10 +588,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/ActivityMethod -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/ActivityMethod">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Entity"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activity method</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a technique or device used or applied in a temporary state during an activity</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;ActivityMethod">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Entity"/>
+        <rdfs:label rdf:datatype="&xsd;string">activity method</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a technique or device used or applied in a temporary state during an activity</skos:definition>
     </owl:Class>
     
 
@@ -686,11 +599,22 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Author -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Author">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/RoleOfActor"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">author</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A role of an actor that originates the occurance and has responsibility for the Statement  given and ownership of the Situation
+    <owl:Class rdf:about="&MDMI-GSM;Author">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;RoleOfActor"/>
+        <rdfs:label rdf:datatype="&xsd;string">author</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">A role of an actor that originates the Occurence and has responsibility for the Statement  given and ownership of the Situation
 </skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Classification -->
+
+
+    <owl:Class rdf:about="&MDMI-GSM;Classification">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+        <rdfs:label rdf:datatype="&xsd;string">classification</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">defines the type of clinical event, activity, or opinion that has or is requesting an action or a result</skos:definition>
     </owl:Class>
     
 
@@ -698,10 +622,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Date -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Date">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Value"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">date</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a point or period of time</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Date">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+        <rdfs:label rdf:datatype="&xsd;string">date</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a point or period of time</skos:definition>
     </owl:Class>
     
 
@@ -709,10 +633,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Device -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Device">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/actor"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">device</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a manufactured item used in an activity without being substantially changed through that activity</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Device">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;actor"/>
+        <rdfs:label rdf:datatype="&xsd;string">device</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a manufactured item used in an activity without being substantially changed through that activity</skos:definition>
     </owl:Class>
     
 
@@ -720,10 +644,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/DeviceActivityMethod -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/DeviceActivityMethod">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/ActivityMethod"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">device activity method</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the method of the device for the activity</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;DeviceActivityMethod">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;ActivityMethod"/>
+        <rdfs:label rdf:datatype="&xsd;string">device activity method</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the method of the device for the activity</skos:definition>
     </owl:Class>
     
 
@@ -731,10 +655,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Duration -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Duration">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Value"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">duration</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the time between the start and the end of points in time</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Duration">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+        <rdfs:label rdf:datatype="&xsd;string">duration</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the time between the start and the end of points in time</skos:definition>
     </owl:Class>
     
 
@@ -742,9 +666,9 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Entity -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Entity">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">entity</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a thing with distinct and independent existence</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Entity">
+        <rdfs:label rdf:datatype="&xsd;string">entity</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a thing with distinct and independent existence</skos:definition>
     </owl:Class>
     
 
@@ -752,10 +676,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Event -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Event">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Occurance"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">event</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An occurrence that is conceived of happening in a single time point, not over a time period.</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Event">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Occurence"/>
+        <rdfs:label rdf:datatype="&xsd;string">event</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">An occurrence that is conceived of happening in a single time point, not over a time period.</skos:definition>
     </owl:Class>
     
 
@@ -763,10 +687,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Image -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Image">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Value"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">image</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data that represents pictoral or graphic information</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Image">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+        <rdfs:label rdf:datatype="&xsd;string">image</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">data that represents pictoral or graphic information</skos:definition>
     </owl:Class>
     
 
@@ -774,9 +698,9 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/InterventionActivity -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/InterventionActivity">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intervention activity</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an activity with the intent to alter a current state of affairs</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;InterventionActivity">
+        <rdfs:label rdf:datatype="&xsd;string">intervention activity</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an activity with the intent to alter a current state of affairs</skos:definition>
     </owl:Class>
     
 
@@ -784,28 +708,23 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/InterventionRequest -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/InterventionRequest">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/RequestEvent"/>
+    <owl:Class rdf:about="&MDMI-GSM;InterventionRequest">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;RequestEvent"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/requests"/>
-                <owl:allValuesFrom rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/InterventionActivity"/>
+                <owl:onProperty rdf:resource="&MDMI-GSM;requests"/>
+                <owl:allValuesFrom rdf:resource="&MDMI-GSM;InterventionActivity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/requests"/>
-                <owl:allValuesFrom rdf:resource="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/ClinicalActivity"/>
+                <owl:onProperty rdf:resource="&MDMI-GSM;requests"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/requests"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intervention request</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the association of an intervention and a request</skos:definition>
+        <rdfs:label rdf:datatype="&xsd;string">intervention request</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the association of an intervention and a request</skos:definition>
     </owl:Class>
     
 
@@ -813,21 +732,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Name -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Name">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Value"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the label of a thing that is used to communicate its identity</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Number -->
-
-
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Number">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Value"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">number</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a number is a value representing a quantifiable amount of some quality or characteristic</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Name">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+        <rdfs:label rdf:datatype="&xsd;string">name</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the label of a thing that is used to communicate its identity</skos:definition>
     </owl:Class>
     
 
@@ -835,9 +743,9 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Observation -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Observation">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">observation</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activities that identify a specific situation as understood by an observer</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Observation">
+        <rdfs:label rdf:datatype="&xsd;string">observation</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">activities that identify a specific situation as understood by an observer</skos:definition>
     </owl:Class>
     
 
@@ -845,27 +753,27 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/ObservationRequest -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/ObservationRequest">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/RequestEvent"/>
+    <owl:Class rdf:about="&MDMI-GSM;ObservationRequest">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;RequestEvent"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/requests"/>
-                <owl:allValuesFrom rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Observation"/>
+                <owl:onProperty rdf:resource="&MDMI-GSM;requests"/>
+                <owl:allValuesFrom rdf:resource="&MDMI-GSM;Observation"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">observation request</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a request for an observation that will be carried out in the future</skos:definition>
+        <rdfs:label rdf:datatype="&xsd;string">observation request</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a request for an observation that will be carried out in the future</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Occurance -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Occurence -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Occurance">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">occurance</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an occurrence represents one or more entities and their relationships changing over time (an activity) or changing at a specific time (an event)
+    <owl:Class rdf:about="&MDMI-GSM;Occurence">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Situation"/>
+        <rdfs:label rdf:datatype="&xsd;string">occurrence</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an occurrence represents one or more entities and their relationships changing over time (an activity) or changing at a specific time (an event)
 </skos:definition>
     </owl:Class>
     
@@ -874,10 +782,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Opinion -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Opinion">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/StateOfAffairs"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opinion</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a belief held by an actor</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Opinion">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;StateOfAffairs"/>
+        <rdfs:label rdf:datatype="&xsd;string">opinion</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a belief held by an actor</skos:definition>
     </owl:Class>
     
 
@@ -885,10 +793,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Organization -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Organization">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/ResponsibleActor"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organization</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a social or legal structure formed by human beings.</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Organization">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;ResponsibleActor"/>
+        <rdfs:label rdf:datatype="&xsd;string">organization</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a social or legal structure formed by human beings.</skos:definition>
     </owl:Class>
     
 
@@ -896,35 +804,24 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Participant -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Participant">
-        <rdfs:subClassOf rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/RelativeThing"/>
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/RoleOfActor"/>
+    <owl:Class rdf:about="&MDMI-GSM;Participant">
+        <rdfs:subClassOf rdf:resource="&CCM;RelativeThing"/>
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;RoleOfActor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/playedBy"/>
-                <owl:allValuesFrom rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/ResponsibleActor"/>
+                <owl:onProperty rdf:resource="&CCM;playedBy"/>
+                <owl:allValuesFrom rdf:resource="&MDMI-GSM;ResponsibleActor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/playedBy"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="&CCM;playedBy"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">participant</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[RIM] is a role of the actor who is involved in some manner in the Occurance.
+        <rdfs:label rdf:datatype="&xsd;string">participant</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">[RIM] is a role of the actor who is involved in some manner in the Occurence.
 </skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Performanceofactionfocus -->
-
-
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Performanceofactionfocus">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Value"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">performanceofactionfocus</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">defines the type of clinical event, activity, or opinion that has or is requesting an action or a result</skos:definition>
     </owl:Class>
     
 
@@ -932,10 +829,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Performer -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Performer">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Participant"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">performer</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a person,  organization or device that actually and principally carries out an action</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Performer">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Participant"/>
+        <rdfs:label rdf:datatype="&xsd;string">performer</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a person,  organization or device that actually and principally carries out an action</skos:definition>
     </owl:Class>
     
 
@@ -943,11 +840,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Person -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Person">
-        <rdfs:subClassOf rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/IdentifiableThing"/>
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/ResponsibleActor"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">person</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an individual of the species homo sapiens.</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Person">
+        <rdfs:subClassOf rdf:resource="&CCM;IdentifiableThing"/>
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;ResponsibleActor"/>
+        <rdfs:label rdf:datatype="&xsd;string">person</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an individual of the species homo sapiens.</skos:definition>
     </owl:Class>
     
 
@@ -955,10 +852,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/PhysicalLocation -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/PhysicalLocation">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Entity"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical location</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.
+    <owl:Class rdf:about="&MDMI-GSM;PhysicalLocation">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Entity"/>
+        <rdfs:label rdf:datatype="&xsd;string">physical location</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.
 
 [RIM] a facility. May be a static building (or room therein) or a moving location (e.g., ambulance, helicopter, aircraft, train, truck, ship, etc.) </skos:definition>
     </owl:Class>
@@ -968,28 +865,39 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Quality -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Quality">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/StateOfAffairs"/>
+    <owl:Class rdf:about="&MDMI-GSM;Quality">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;StateOfAffairs"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/about"/>
-                <owl:allValuesFrom rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Entity"/>
+                <owl:onProperty rdf:resource="&MDMI-GSM;about"/>
+                <owl:allValuesFrom rdf:resource="&MDMI-GSM;Entity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/about"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="&MDMI-GSM;about"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/qualityValue"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="&MDMI-GSM;qualityValue"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a quality is a state of affairs representing a characteristic of an entity at a point in time or over a range of time. Examples include the temperature or height of a person at a particular time.</skos:definition>
+        <rdfs:label rdf:datatype="&xsd;string">quality</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a quality is a state of affairs representing a characteristic of an entity at a point in time or over a range of time. Examples include the temperature or height of a person at a particular time.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Quantity -->
+
+
+    <owl:Class rdf:about="&MDMI-GSM;Quantity">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+        <rdfs:label rdf:datatype="&xsd;string">quantity</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a number is a value representing a quantifiable amount of some quality or characteristic</skos:definition>
     </owl:Class>
     
 
@@ -997,10 +905,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/ReferenceRange -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/ReferenceRange">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Performanceofactionfocus"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reference range</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guidance on how to interpret a result by comparison to a normal or recommended spectrum of results</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;ReferenceRange">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Quantity"/>
+        <rdfs:label rdf:datatype="&xsd;string">reference range</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">guidance on how to interpret a result by comparison to a normal or recommended spectrum of results</skos:definition>
     </owl:Class>
     
 
@@ -1008,10 +916,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Repetitive -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Repetitive">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">repetitive</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a situation that repeats. Repetitive is a &quot;mixin&quot; class, any situation may be repetitive unless otherwise restricted</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Repetitive">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Situation"/>
+        <rdfs:label rdf:datatype="&xsd;string">repetitive</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a situation that repeats. Repetitive is a &quot;mixin&quot; class, any situation may be repetitive unless otherwise restricted</skos:definition>
     </owl:Class>
     
 
@@ -1019,16 +927,16 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/RequestEvent -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/RequestEvent">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Event"/>
+    <owl:Class rdf:about="&MDMI-GSM;RequestEvent">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Event"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/requests"/>
-                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                <owl:onProperty rdf:resource="&MDMI-GSM;requests"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">request event</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a request event is an event that requests the initiation of an activity</skos:definition>
+        <rdfs:label rdf:datatype="&xsd;string">request event</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a request event is an event that requests the initiation of an activity</skos:definition>
     </owl:Class>
     
 
@@ -1036,11 +944,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/ResponsibleActor -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/ResponsibleActor">
-        <rdfs:subClassOf rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/IdentifiableThing"/>
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/actor"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">responsible actor</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a person or organization capable of participating and taking responsibility for activities</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;ResponsibleActor">
+        <rdfs:subClassOf rdf:resource="&CCM;IdentifiableThing"/>
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;actor"/>
+        <rdfs:label rdf:datatype="&xsd;string">responsible actor</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a person or organization capable of participating and taking responsibility for activities</skos:definition>
     </owl:Class>
     
 
@@ -1048,16 +956,16 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Result -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Result">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Value"/>
+    <owl:Class rdf:about="&MDMI-GSM;Result">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/mesurementValue"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="&MDMI-GSM;mesurementValue"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">result</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the measurement resulting from the action of an observation, event, or activity</skos:definition>
+        <rdfs:label rdf:datatype="&xsd;string">result</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the measurement resulting from the action of an observation, event, or activity</skos:definition>
     </owl:Class>
     
 
@@ -1065,22 +973,22 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/RoleOfActor -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/RoleOfActor">
-        <rdfs:subClassOf rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/RelativeThing"/>
+    <owl:Class rdf:about="&MDMI-GSM;RoleOfActor">
+        <rdfs:subClassOf rdf:resource="&CCM;RelativeThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/playedBy"/>
-                <owl:allValuesFrom rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/actor"/>
+                <owl:onProperty rdf:resource="&CCM;playedBy"/>
+                <owl:allValuesFrom rdf:resource="&MDMI-GSM;actor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/playedBy"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="&CCM;playedBy"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">role of actor</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">How an actor is associated with a situation</skos:definition>
+        <rdfs:label rdf:datatype="&xsd;string">role of actor</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">How an actor is associated with a situation</skos:definition>
     </owl:Class>
     
 
@@ -1088,15 +996,11 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Situation -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Situation">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Entity"/>
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Temporal"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">situation</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an identifiable entity composed of an arrangement of entities and the relations between them over a time interval. 
-
-
-
-</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Situation">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Entity"/>
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Temporal"/>
+        <rdfs:label rdf:datatype="&xsd;string">situation</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an identifiable entity composed of an arrangement of entities and the relations between them over a time interval </skos:definition>
     </owl:Class>
     
 
@@ -1104,10 +1008,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/SoftwareAgent -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/SoftwareAgent">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/actor"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">software agent</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an application executed on a computer</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;SoftwareAgent">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;actor"/>
+        <rdfs:label rdf:datatype="&xsd;string">software agent</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an application executed on a computer</skos:definition>
     </owl:Class>
     
 
@@ -1115,10 +1019,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/StateOfAffairs -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/StateOfAffairs">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Situation"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">state of affairs</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a state of affairs is a static condition or &quot;state&quot; consisting of a set of entities, properties and the relationships between them.
+    <owl:Class rdf:about="&MDMI-GSM;StateOfAffairs">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Situation"/>
+        <rdfs:label rdf:datatype="&xsd;string">state of affairs</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a state of affairs is a static condition or &quot;state&quot; consisting of a set of entities, properties and the relationships between them over a time period.
 </skos:definition>
     </owl:Class>
     
@@ -1127,10 +1031,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Statement -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Statement">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Event"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">statement</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the event of an actor, performing as an author, to assert or record a fact, belief or situation</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Statement">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Event"/>
+        <rdfs:label rdf:datatype="&xsd;string">statement</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the event of an actor, performing as an author, to assert or record a fact, belief or situation</skos:definition>
     </owl:Class>
     
 
@@ -1138,10 +1042,10 @@
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Status -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Status">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Value"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">status</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+    <owl:Class rdf:about="&MDMI-GSM;Status">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+        <rdfs:label rdf:datatype="&xsd;string">status</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">
 
 The state of a situation contained in a statement.</skos:definition>
     </owl:Class>
@@ -1151,23 +1055,23 @@ The state of a situation contained in a statement.</skos:definition>
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Subject -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Subject">
-        <rdfs:subClassOf rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/RelativeThing"/>
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Participant"/>
+    <owl:Class rdf:about="&MDMI-GSM;Subject">
+        <rdfs:subClassOf rdf:resource="&CCM;RelativeThing"/>
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Participant"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/playedBy"/>
-                <owl:allValuesFrom rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Person"/>
+                <owl:onProperty rdf:resource="&CCM;playedBy"/>
+                <owl:allValuesFrom rdf:resource="&MDMI-GSM;Person"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/playedBy"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="&CCM;playedBy"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">subject</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the principle target on which an action happens.</skos:definition>
+        <rdfs:label rdf:datatype="&xsd;string">subject</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the principle target on which an action happens.</skos:definition>
     </owl:Class>
     
 
@@ -1175,10 +1079,10 @@ The state of a situation contained in a statement.</skos:definition>
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Substance -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Substance">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Entity"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">substance</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a homogeneous material with a definite composition</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Substance">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Entity"/>
+        <rdfs:label rdf:datatype="&xsd;string">substance</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a homogeneous material with a definite composition</skos:definition>
     </owl:Class>
     
 
@@ -1186,27 +1090,27 @@ The state of a situation contained in a statement.</skos:definition>
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Temporal -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Temporal">
+    <owl:Class rdf:about="&MDMI-GSM;Temporal">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/hasEndDateTime"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="&MDMI-GSM;hasEndDateTime"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/hasStartDateTime"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="&MDMI-GSM;hasStartDateTime"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/occursOn"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="&MDMI-GSM;occursOn"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temporal</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">something that exists over time</skos:definition>
+        <rdfs:label rdf:datatype="&xsd;string">temporal</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">something that exists over time</skos:definition>
     </owl:Class>
     
 
@@ -1214,10 +1118,10 @@ The state of a situation contained in a statement.</skos:definition>
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Text -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Text">
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Value"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unstructured data presented in written form - physical or virtual</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Text">
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+        <rdfs:label rdf:datatype="&xsd;string">text</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">unstructured data presented in written form - physical or virtual</skos:definition>
     </owl:Class>
     
 
@@ -1225,9 +1129,9 @@ The state of a situation contained in a statement.</skos:definition>
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/Value -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/Value">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">value</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an atomic. immutable piece of information without a specific lifetime or identity</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;Value">
+        <rdfs:label rdf:datatype="&xsd;string">value</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an atomic. immutable piece of information without a specific lifetime or identity</skos:definition>
     </owl:Class>
     
 
@@ -1235,23 +1139,11 @@ The state of a situation contained in a statement.</skos:definition>
     <!-- https://www.omg.org/spec/MDMI/MDMIExample/actor -->
 
 
-    <owl:Class rdf:about="https://www.omg.org/spec/MDMI/MDMIExample/actor">
-        <rdfs:subClassOf rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/IdentifiableThing"/>
-        <rdfs:subClassOf rdf:resource="https://www.omg.org/spec/MDMI/MDMIExample/Entity"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">actor</rdfs:label>
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an entity capable of performing activities</skos:definition>
+    <owl:Class rdf:about="&MDMI-GSM;actor">
+        <rdfs:subClassOf rdf:resource="&CCM;IdentifiableThing"/>
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Entity"/>
+        <rdfs:label rdf:datatype="&xsd;string">actor</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an entity capable of performing activities</skos:definition>
     </owl:Class>
 </rdf:RDF>
 
-
-
-<!-- Generated by the OWL API (version 5.0.2.20160507-1747) https://github.com/owlcs/owlapi/ -->
-
-
-
-
-
-<!-- Warning: type declarations were not added automatically. -->
-
-
-<!-- Generated using the No Magic Cameo Concept Modeler (19.0 SP3, build 20190909_1921-137b5364) on 2020-02-22 at 16:01:41 GMT -->
