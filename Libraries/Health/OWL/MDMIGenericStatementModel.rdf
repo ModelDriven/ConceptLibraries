@@ -30,7 +30,7 @@
         <rdfs:label rdf:datatype="&xsd;string">Model Driven Message Interoperability Data Model Expressed in OWL</rdfs:label>
         <skos:altLabel rdf:datatype="&xsd;string">MDMI-GSM</skos:altLabel>
         <sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019 Model Driven Solutions</sm:copyright>
-        <dct:license rdf:datatype="&xsd;anyURI">http://opensource.org/licenses/MIT</dct:license>
+        <dct:license rdf:datatype="&xsd;anyURI">http://opensource.org/licenses/EPL-2.0</dct:license>
     </owl:Ontology>
     
 
@@ -109,7 +109,7 @@
         <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
         <rdfs:range rdf:resource="&MDMI-GSM;Participant"/>
         <rdfs:label rdf:datatype="&xsd;string">about participant</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the participant that is the subject of some statement, fact, record, or belief</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">the association of a situation and a participant</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -150,7 +150,7 @@
             <rdf:Description rdf:about="&MDMI-GSM;hasOrganizationLegalName"/>
         </owl:propertyChainAxiom>
         <rdfs:label rdf:datatype="&xsd;string">has author organization legal name</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">associates an organization with an author person legal name</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">associates an organization with the property author person legal name</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -178,7 +178,7 @@
         <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
         <rdfs:range rdf:resource="&MDMI-GSM;Classification"/>
         <rdfs:label rdf:datatype="&xsd;string">has classification</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">classification is a property of any entity representing an extended type or category of the entity. Also known as &quot;focus&quot; in ANF.</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">classification is a property of any entity representing an extended type or category of the entity.</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -190,7 +190,7 @@
         <rdfs:domain rdf:resource="&MDMI-GSM;DeviceActivityMethod"/>
         <rdfs:range rdf:resource="&MDMI-GSM;Device"/>
         <rdfs:label rdf:datatype="&xsd;string">has device</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">device used for an activity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">device used or intended for use for an activity</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -215,7 +215,7 @@
         <rdfs:domain rdf:resource="&MDMI-GSM;Temporal"/>
         <rdfs:range rdf:resource="&MDMI-GSM;Date"/>
         <rdfs:label rdf:datatype="&xsd;string">has end date time</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">date and time at which a temporal entity started or will end</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">date and time at which a temporal entity ended or will end</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -228,7 +228,7 @@
         <rdfs:domain rdf:resource="&MDMI-GSM;ResponsibleActor"/>
         <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
         <rdfs:label rdf:datatype="&xsd;string">has legal name</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">associates a</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">associates legal with name</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -265,7 +265,7 @@
         <rdfs:domain rdf:resource="&MDMI-GSM;Organization"/>
         <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
         <rdfs:label rdf:datatype="&xsd;string">has organization legal name</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a dataelementconcept property to be associated with a mdmibusinesselement</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">associates organization with the property legal name</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -303,7 +303,7 @@
         <rdfs:domain rdf:resource="&MDMI-GSM;Person"/>
         <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
         <rdfs:label rdf:datatype="&xsd;string">has person legal name</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">associates the property of person legal name with organization</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">associates entity with person with the property of legal name</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -352,7 +352,7 @@
         <rdfs:domain rdf:resource="&MDMI-GSM;Opinion"/>
         <rdfs:range rdf:resource="&MDMI-GSM;Performer"/>
         <rdfs:label rdf:datatype="&xsd;string">held by</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the individual having an opinion</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">the Person having an opinion</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -363,7 +363,7 @@
     <owl:ObjectProperty rdf:about="&MDMI-GSM;impacts">
         <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
         <rdfs:range rdf:resource="&MDMI-GSM;Situation"/>
-        <skos:definition rdf:datatype="&xsd;string">a situation changed by another</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">affects, changes</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -498,7 +498,7 @@
         <rdfs:domain rdf:resource="&MDMI-GSM;RequestEvent"/>
         <rdfs:range rdf:resource="&MDMI-GSM;Activity"/>
         <rdfs:label rdf:datatype="&xsd;string">requests</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an appeal for a desired activity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">an appeal or order for a desired activity</skos:definition>
     </owl:ObjectProperty>
     
 
@@ -602,7 +602,7 @@
     <owl:Class rdf:about="&MDMI-GSM;Author">
         <rdfs:subClassOf rdf:resource="&MDMI-GSM;RoleOfActor"/>
         <rdfs:label rdf:datatype="&xsd;string">author</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">A role of an actor that originates the Occurence and has responsibility for the Statement  given and ownership of the Situation
+        <skos:definition rdf:datatype="&xsd;string">A role of an actor that originates the Occurence and has responsibility for the Statement given and ownership of the Situation
 </skos:definition>
     </owl:Class>
     
@@ -773,7 +773,7 @@
     <owl:Class rdf:about="&MDMI-GSM;Occurence">
         <rdfs:subClassOf rdf:resource="&MDMI-GSM;Situation"/>
         <rdfs:label rdf:datatype="&xsd;string">occurrence</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an occurrence represents one or more entities and their relationships changing over time (an activity) or changing at a specific time (an event)
+        <skos:definition rdf:datatype="&xsd;string">represents one or more entities and their relationships changing over time (an activity) or changing at a specific time (an event)
 </skos:definition>
     </owl:Class>
     
@@ -820,7 +820,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">participant</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">[RIM] is a role of the actor who is involved in some manner in the Occurence.
+        <skos:definition rdf:datatype="&xsd;string">a role of the actor who is involved in some manner in the Occurence.
 </skos:definition>
     </owl:Class>
     
@@ -832,7 +832,7 @@
     <owl:Class rdf:about="&MDMI-GSM;Performer">
         <rdfs:subClassOf rdf:resource="&MDMI-GSM;Participant"/>
         <rdfs:label rdf:datatype="&xsd;string">performer</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a person,  organization or device that actually and principally carries out an action</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">a person, organization or device that carries out an action</skos:definition>
     </owl:Class>
     
 
@@ -855,9 +855,7 @@
     <owl:Class rdf:about="&MDMI-GSM;PhysicalLocation">
         <rdfs:subClassOf rdf:resource="&MDMI-GSM;Entity"/>
         <rdfs:label rdf:datatype="&xsd;string">physical location</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.
-
-[RIM] a facility. May be a static building (or room therein) or a moving location (e.g., ambulance, helicopter, aircraft, train, truck, ship, etc.) </skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated. May be a static building (or room therein) or a moving location (e.g., ambulance, helicopter, aircraft, train, truck, ship, etc.)  </skos:definition>
     </owl:Class>
     
 
