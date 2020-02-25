@@ -2,7 +2,7 @@
 <!DOCTYPE rdf:RDF [
 <!ENTITY MDMI-GSM "https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/">
 <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
-<!ENTITY CCM "http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/">
+
 ]>
 <rdf:RDF xmlns="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/"
      xml:base="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/"
@@ -14,12 +14,10 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core/"
      xmlns:sm="http://www.omg.org/techprocess/ab/SpecificationMetadata/"
-     xmlns:CCM="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel">
-        <owl:versionIRI rdf:resource="https://www.omg.org/spec/MDMI/20191101/MDMIExample/"/>
+        <owl:versionIRI rdf:resource="https://www.omg.org/spec/MDMI/20191101/MDMIGenericStatementModel/"/>
         <owl:imports rdf:resource="http://www.omg.org/techprocess/ab/SpecificationMetadata/"/>
-        <owl:imports rdf:resource="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/"/>
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
         <sm:contentLanguage rdf:datatype="&xsd;anyURI">http://www.w3.org/standards/techs/owl#w3c_all</sm:contentLanguage>
         <sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019 MDIX, Inc.</sm:copyright>
@@ -47,7 +45,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/StatementMode -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/StatementMode -->
 
 
     <rdf:Description rdf:about="&MDMI-GSM;StatementMode">
@@ -87,10 +85,17 @@
      -->
 
 
-    
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/about -->
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/about -->
+    <owl:ObjectProperty rdf:about="&MDMI-GSM;playedBy">
+        <rdfs:domain rdf:resource="&MDMI-GSM;RoleOfActor"/>
+        <rdfs:label rdf:datatype="&xsd;string">played by</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">the entity that plays the subject role</skos:definition>
+    </owl:ObjectProperty>    
+
+
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/about -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;about">
@@ -101,7 +106,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/aboutParticipant -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/aboutParticipant -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;aboutParticipant">
@@ -114,7 +119,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/formsOpinion -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/formsOpinion -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;formsOpinion">
@@ -127,7 +132,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasAuthor -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasAuthor -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasAuthor">
@@ -139,7 +144,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasAuthorOrganizationLegalName -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasAuthorOrganizationLegalName -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasAuthorOrganizationLegalName">
@@ -155,7 +160,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasAuthorPersonLegalName -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasAuthorPersonLegalName -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasAuthorPersonLegalName">
@@ -171,7 +176,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasClassification -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasClassification -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasClassification">
@@ -183,7 +188,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasDevice -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasDevice -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasDevice">
@@ -195,7 +200,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasDeviceName -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasDeviceName -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasDeviceName">
@@ -208,7 +213,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasEndDateTime -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasEndDateTime -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasEndDateTime">
@@ -220,7 +225,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasLegalName -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasLegalName -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasLegalName">
@@ -233,7 +238,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasMethod -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasMethod -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasMethod">
@@ -245,7 +250,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasName -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasName -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasName">
@@ -257,7 +262,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasOrganizationLegalName -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasOrganizationLegalName -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasOrganizationLegalName">
@@ -270,7 +275,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasParticipant -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasParticipant -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasParticipant">
@@ -282,12 +287,12 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasPerformer -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasPerformer -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasPerformer">
         <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;hasParticipant"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;Occurence"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;Occurrence"/>
         <rdfs:range rdf:resource="&MDMI-GSM;Performer"/>
         <rdfs:label rdf:datatype="&xsd;string">has performer</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">an association of performer to a situation</skos:definition>
@@ -295,7 +300,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasPersonLegalName -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasPersonLegalName -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasPersonLegalName">
@@ -308,7 +313,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasPurpose -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasPurpose -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasPurpose">
@@ -320,7 +325,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasStartDateTime -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasStartDateTime -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasStartDateTime">
@@ -332,7 +337,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasStatus -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasStatus -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;hasStatus">
@@ -344,7 +349,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/heldBy -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/heldBy -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;heldBy">
@@ -357,7 +362,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/impacts -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/impacts -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;impacts">
@@ -368,7 +373,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/isOpinionAbout -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/isOpinionAbout -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;isOpinionAbout">
@@ -381,7 +386,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/isStatementAbout -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/isStatementAbout -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;isStatementAbout">
@@ -394,7 +399,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/mesurementValue -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/mesurementValue -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;mesurementValue">
@@ -406,7 +411,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/observes -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/observes -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;observes">
@@ -418,7 +423,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/occursOn -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/occursOn -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;occursOn">
@@ -430,7 +435,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/qualityValue -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/qualityValue -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;qualityValue">
@@ -442,7 +447,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/repetitionCount -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/repetitionCount -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;repetitionCount">
@@ -454,7 +459,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/repetitionDuration -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/repetitionDuration -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;repetitionDuration">
@@ -466,7 +471,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/repetitionFrequency -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/repetitionFrequency -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;repetitionFrequency">
@@ -478,7 +483,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/repetitionSeparation -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/repetitionSeparation -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;repetitionSeparation">
@@ -490,7 +495,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/requests -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/requests -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;requests">
@@ -503,12 +508,12 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/resultsIn -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/resultsIn -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-GSM;resultsIn">
         <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;impacts"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;Occurence"/>
+        <rdfs:domain rdf:resource="&MDMI-GSM;Occurrence"/>
         <rdfs:range rdf:resource="&MDMI-GSM;Situation"/>
         <rdfs:label rdf:datatype="&xsd;string">results in</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">leads to an outcome</skos:definition>
@@ -528,7 +533,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/hasId -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasId -->
 
 
     <owl:DatatypeProperty rdf:about="&MDMI-GSM;hasId">
@@ -539,7 +544,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/statementHasMode -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/statementHasMode -->
 
 
     <owl:DatatypeProperty rdf:about="&MDMI-GSM;statementHasMode">
@@ -560,7 +565,7 @@
      -->
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Activity -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Activity -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Activity">
@@ -572,7 +577,7 @@
                 </owl:unionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Occurence"/>
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Occurrence"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&MDMI-GSM;hasPurpose"/>
@@ -585,7 +590,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/ActivityMethod -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/ActivityMethod -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;ActivityMethod">
@@ -596,19 +601,19 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Author -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Author -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Author">
         <rdfs:subClassOf rdf:resource="&MDMI-GSM;RoleOfActor"/>
         <rdfs:label rdf:datatype="&xsd;string">author</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">A role of an actor that originates the Occurence and has responsibility for the Statement given and ownership of the Situation
+        <skos:definition rdf:datatype="&xsd;string">A role of an actor that originates the Occurrence and has responsibility for the Statement given and ownership of the Situation
 </skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Classification -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Classification -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Classification">
@@ -619,7 +624,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Date -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Date -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Date">
@@ -630,7 +635,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Device -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Device -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Device">
@@ -641,7 +646,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/DeviceActivityMethod -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/DeviceActivityMethod -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;DeviceActivityMethod">
@@ -652,7 +657,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Duration -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Duration -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Duration">
@@ -663,7 +668,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Entity -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Entity -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Entity">
@@ -673,18 +678,18 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Event -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Event -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Event">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Occurence"/>
+        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Occurrence"/>
         <rdfs:label rdf:datatype="&xsd;string">event</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">An occurrence that is conceived of happening in a single time point, not over a time period.</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Image -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Image -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Image">
@@ -695,17 +700,18 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/InterventionActivity -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/InterventionActivity -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;InterventionActivity">
         <rdfs:label rdf:datatype="&xsd;string">intervention activity</rdfs:label>
+	    <rdfs:subClassOf rdf:resource="&MDMI-GSM;Activity"/>		
         <skos:definition rdf:datatype="&xsd;string">an activity with the intent to alter a current state of affairs</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/InterventionRequest -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/InterventionRequest -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;InterventionRequest">
@@ -729,7 +735,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Name -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Name -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Name">
@@ -740,17 +746,18 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Observation -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Observation -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Observation">
+	    <rdfs:subClassOf rdf:resource="&MDMI-GSM;Activity"/>
         <rdfs:label rdf:datatype="&xsd;string">observation</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">activities that identify a specific situation as understood by an observer</skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/ObservationRequest -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/ObservationRequest -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;ObservationRequest">
@@ -767,10 +774,10 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Occurence -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Occurrence -->
 
 
-    <owl:Class rdf:about="&MDMI-GSM;Occurence">
+    <owl:Class rdf:about="&MDMI-GSM;Occurrence">
         <rdfs:subClassOf rdf:resource="&MDMI-GSM;Situation"/>
         <rdfs:label rdf:datatype="&xsd;string">occurrence</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">represents one or more entities and their relationships changing over time (an activity) or changing at a specific time (an event)
@@ -779,7 +786,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Opinion -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Opinion -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Opinion">
@@ -790,7 +797,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Organization -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Organization -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Organization">
@@ -801,32 +808,31 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Participant -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Participant -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Participant">
-        <rdfs:subClassOf rdf:resource="&CCM;RelativeThing"/>
         <rdfs:subClassOf rdf:resource="&MDMI-GSM;RoleOfActor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&CCM;playedBy"/>
+                <owl:onProperty rdf:resource="&MDMI-GSM;playedBy"/>
                 <owl:allValuesFrom rdf:resource="&MDMI-GSM;ResponsibleActor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&CCM;playedBy"/>
+                <owl:onProperty rdf:resource="&MDMI-GSM;playedBy"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">participant</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a role of the actor who is involved in some manner in the Occurence.
+        <skos:definition rdf:datatype="&xsd;string">a role of the actor who is involved in some manner in the Occurrence.
 </skos:definition>
     </owl:Class>
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Performer -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Performer -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Performer">
@@ -837,11 +843,10 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Person -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Person -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Person">
-        <rdfs:subClassOf rdf:resource="&CCM;IdentifiableThing"/>
         <rdfs:subClassOf rdf:resource="&MDMI-GSM;ResponsibleActor"/>
         <rdfs:label rdf:datatype="&xsd;string">person</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">an individual of the species homo sapiens.</skos:definition>
@@ -849,7 +854,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/PhysicalLocation -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/PhysicalLocation -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;PhysicalLocation">
@@ -860,7 +865,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Quality -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Quality -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Quality">
@@ -889,7 +894,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Quantity -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Quantity -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Quantity">
@@ -900,7 +905,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/ReferenceRange -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/ReferenceRange -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;ReferenceRange">
@@ -911,7 +916,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Repetitive -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Repetitive -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Repetitive">
@@ -922,7 +927,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/RequestEvent -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/RequestEvent -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;RequestEvent">
@@ -939,11 +944,10 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/ResponsibleActor -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/ResponsibleActor -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;ResponsibleActor">
-        <rdfs:subClassOf rdf:resource="&CCM;IdentifiableThing"/>
         <rdfs:subClassOf rdf:resource="&MDMI-GSM;actor"/>
         <rdfs:label rdf:datatype="&xsd;string">responsible actor</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">a person or organization capable of participating and taking responsibility for activities</skos:definition>
@@ -951,7 +955,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Result -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Result -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Result">
@@ -968,20 +972,19 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/RoleOfActor -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/RoleOfActor -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;RoleOfActor">
-        <rdfs:subClassOf rdf:resource="&CCM;RelativeThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&CCM;playedBy"/>
+                <owl:onProperty rdf:resource="&MDMI-GSM;playedBy"/>
                 <owl:allValuesFrom rdf:resource="&MDMI-GSM;actor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&CCM;playedBy"/>
+                <owl:onProperty rdf:resource="&MDMI-GSM;playedBy"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -991,7 +994,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Situation -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Situation -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Situation">
@@ -1003,7 +1006,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/SoftwareAgent -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/SoftwareAgent -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;SoftwareAgent">
@@ -1014,7 +1017,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/StateOfAffairs -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/StateOfAffairs -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;StateOfAffairs">
@@ -1026,7 +1029,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Statement -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Statement -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Statement">
@@ -1037,7 +1040,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Status -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Status -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Status">
@@ -1050,21 +1053,20 @@ The state of a situation contained in a statement.</skos:definition>
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Subject -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Subject -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Subject">
-        <rdfs:subClassOf rdf:resource="&CCM;RelativeThing"/>
         <rdfs:subClassOf rdf:resource="&MDMI-GSM;Participant"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&CCM;playedBy"/>
+                <owl:onProperty rdf:resource="&MDMI-GSM;playedBy"/>
                 <owl:allValuesFrom rdf:resource="&MDMI-GSM;Person"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&CCM;playedBy"/>
+                <owl:onProperty rdf:resource="&MDMI-GSM;playedBy"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1074,7 +1076,7 @@ The state of a situation contained in a statement.</skos:definition>
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Substance -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Substance -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Substance">
@@ -1085,7 +1087,7 @@ The state of a situation contained in a statement.</skos:definition>
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Temporal -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Temporal -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Temporal">
@@ -1113,7 +1115,7 @@ The state of a situation contained in a statement.</skos:definition>
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Text -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Text -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Text">
@@ -1124,7 +1126,7 @@ The state of a situation contained in a statement.</skos:definition>
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/Value -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Value -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;Value">
@@ -1134,11 +1136,10 @@ The state of a situation contained in a statement.</skos:definition>
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExample/actor -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/actor -->
 
 
     <owl:Class rdf:about="&MDMI-GSM;actor">
-        <rdfs:subClassOf rdf:resource="&CCM;IdentifiableThing"/>
         <rdfs:subClassOf rdf:resource="&MDMI-GSM;Entity"/>
         <rdfs:label rdf:datatype="&xsd;string">actor</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">an entity capable of performing activities</skos:definition>

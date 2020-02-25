@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
 	<!ENTITY MDMI-GSM "https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/">
-	<!ENTITY MDMI-EX "https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/">
+	<!ENTITY MDMI-EX "https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/">
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 	<!ENTITY CCM "http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/">
 ]>
 <rdf:RDF xmlns="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/"
      xml:base="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/"
 	 xmlns:MDMI-GSM="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/"
-	 xmlns:MDMI-EX="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/;"
+	 xmlns:MDMI-EX="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/;"
 	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -18,7 +18,7 @@
      xmlns:dct="http://purl.org/dc/terms/"	 
 	 xmlns:CCM="http://nomagic.com/ConceptModeler/ConceptModelingSupportLibrary/"	 
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode">
+    <owl:Ontology rdf:about="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel">
         <owl:imports rdf:resource="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel"/>
         <rdfs:label rdf:datatype="&xsd;string">MDMI Example Healthcare Domain Model</rdfs:label>
         <sm:contentLanguage rdf:datatype="&xsd;anyURI">http://www.w3.org/standards/techs/owl#w3c_all</sm:contentLanguage>
@@ -48,7 +48,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/consumes -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/consumes -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-EX;consumes">
@@ -59,7 +59,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/hasDosage -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/hasDosage -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-EX;hasDosage">
@@ -71,7 +71,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/hasDoseForm -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/hasDoseForm -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-EX;hasDoseForm">
@@ -83,7 +83,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/hasIngredient -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/hasIngredient -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-EX;hasIngredient">
@@ -95,7 +95,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/hasLocation -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/hasLocation -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-EX;hasLocation">
@@ -107,7 +107,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/hasPatient -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/hasPatient -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-EX;hasPatient">
@@ -120,7 +120,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/hasRoute -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/hasRoute -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-EX;hasRoute">
@@ -132,7 +132,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/hasSite -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/hasSite -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-EX;hasSite">
@@ -144,7 +144,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/hasStrength -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/hasStrength -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-EX;hasStrength">
@@ -156,7 +156,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/hasVitalSignValue -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/hasVitalSignValue -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-EX;hasVitalSignValue">
@@ -169,7 +169,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/laterality -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/laterality -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-EX;laterality">
@@ -181,7 +181,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/observesVitalSignValue -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/observesVitalSignValue -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-EX;observesVitalSignValue">
@@ -197,7 +197,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/usesDevice -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/usesDevice -->
 
 
     <owl:ObjectProperty rdf:about="&MDMI-EX;usesDevice">
@@ -281,7 +281,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/AllergicReaction -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/AllergicReaction -->
 
 
     <owl:Class rdf:about="&MDMI-EX;AllergicReaction">
@@ -290,10 +290,9 @@
         <skos:definition rdf:datatype="&xsd;string">a property that qualifies a statement</skos:definition>
         <skos:definition rdf:datatype="&xsd;string">risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance.</skos:definition>
     </owl:Class>
-    
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/AllergicReactionObservation -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/AllergicReactionObservation -->
 
 
     <owl:Class rdf:about="&MDMI-EX;AllergicReactionObservation">
@@ -310,7 +309,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/Allergy -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/Allergy -->
 
 
     <owl:Class rdf:about="&MDMI-EX;Allergy">
@@ -323,7 +322,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/AllergyOpinion -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/AllergyOpinion -->
 
 
     <owl:Class rdf:about="&MDMI-EX;AllergyOpinion">
@@ -340,7 +339,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/BodyStructure -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/BodyStructure -->
 
 
     <owl:Class rdf:about="&MDMI-EX;BodyStructure">
@@ -353,7 +352,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/ClinicalActivity -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/ClinicalActivity -->
 
 
     <owl:Class rdf:about="&MDMI-EX;ClinicalActivity">
@@ -365,7 +364,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/ClinicalSituation -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/ClinicalSituation -->
 
 
     <owl:Class rdf:about="&MDMI-EX;ClinicalSituation">
@@ -382,7 +381,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/Consult -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/Consult -->
 
 
     <owl:Class rdf:about="&MDMI-EX;Consult">
@@ -393,7 +392,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/Encounter -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/Encounter -->
 
 
     <owl:Class rdf:about="&MDMI-EX;Encounter">
@@ -406,7 +405,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/HealthCondition -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/HealthCondition -->
 
 
     <owl:Class rdf:about="&MDMI-EX;HealthCondition">
@@ -423,7 +422,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/ImmunizationActivity -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/ImmunizationActivity -->
 
 
     <owl:Class rdf:about="&MDMI-EX;ImmunizationActivity">
@@ -434,7 +433,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/Medication -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/Medication -->
 
 
     <owl:Class rdf:about="&MDMI-EX;Medication">
@@ -451,7 +450,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/MedicationActivity -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/MedicationActivity -->
 
 
     <owl:Class rdf:about="&MDMI-EX;MedicationActivity">
@@ -462,7 +461,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/Procedure -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/Procedure -->
 
 
     <owl:Class rdf:about="&MDMI-EX;Procedure">
@@ -473,7 +472,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/VitalSign -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/VitalSign -->
 
 
     <owl:Class rdf:about="&MDMI-EX;VitalSign">
@@ -497,7 +496,7 @@
     
 
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainMode/VitalSignObservation -->
+    <!-- https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/VitalSignObservation -->
 
 
     <owl:Class rdf:about="&MDMI-EX;VitalSignObservation">
