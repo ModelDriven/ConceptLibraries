@@ -54,6 +54,7 @@
     <owl:ObjectProperty rdf:about="&MDMI-EX;consumes">
         <rdfs:domain rdf:resource="&MDMI-EX;MedicationActivity"/>
         <rdfs:range rdf:resource="&MDMI-EX;Medication"/>
+		<rdfs:label rdf:datatype="&xsd;string">consumes</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">a substance that is taken up, diminished, altered, or disappears in an activity</skos:definition>
     </owl:ObjectProperty>
     
@@ -315,9 +316,7 @@
     <owl:Class rdf:about="&MDMI-EX;Allergy">
         <rdfs:subClassOf rdf:resource="&MDMI-EX;HealthCondition"/>
         <rdfs:label rdf:datatype="&xsd;string">allergy</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">A health condition that results in the bodies negative reaction to a substance
-
-[FHIR] Risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance. </skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">A health condition that results in the bodies negative reaction to a substance.</skos:definition>
     </owl:Class>
     
 
@@ -398,9 +397,7 @@
     <owl:Class rdf:about="&MDMI-EX;Encounter">
         <rdfs:subClassOf rdf:resource="&MDMI-EX;ClinicalActivity"/>
         <rdfs:label rdf:datatype="&xsd;string">encounter</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">[FHIR] an Encounter is a clinical activity between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
-
-[RIM] An interaction between a patient and healthcare participant(s) for the purpose of providing patient service(s) or assessing the health status of a patient.</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">a clinical activity between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.</skos:definition>
     </owl:Class>
     
 
@@ -417,7 +414,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">health condition</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a state of affairs for the subject relating to their health.</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">a state of affairs for the subject relating to their wellness.</skos:definition>
     </owl:Class>
     
 
@@ -467,7 +464,7 @@
     <owl:Class rdf:about="&MDMI-EX;Procedure">
         <rdfs:subClassOf rdf:resource="&MDMI-EX;ClinicalActivity"/>
         <rdfs:label rdf:datatype="&xsd;string">procedure</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">[RIM] a clinical activity whose immediate and primary outcome (post-condition) is the alteration of the physical condition of the subject.</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">a clinical activity whose immediate and primary outcome (post-condition) is the alteration of the physical condition of the subject.</skos:definition>
     </owl:Class>
     
 
