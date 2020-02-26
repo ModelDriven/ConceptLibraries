@@ -2,7 +2,7 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="User Entered Import Resolution" name="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel" uri="MDMIGenericStatementModel.rdf"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1582592949480" name="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/" uri="MDMIExampleHealthcareDomainModel.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1582592949480" name="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/" uri="MDMIGenericStatementModel.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1582680380699" name="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/" uri="MDMIExampleHealthcareDomainModel.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1582680380699" name="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/" uri="MDMIGenericStatementModel.rdf"/>
     </group>
 </catalog>

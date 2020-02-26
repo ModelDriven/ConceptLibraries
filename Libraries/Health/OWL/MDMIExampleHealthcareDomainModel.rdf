@@ -25,7 +25,7 @@
         <sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019 MDIX, Inc.</sm:copyright>
         <dct:abstract rdf:datatype="&xsd;string">This ontology represents a healthcare specific example of what could be done to represent MDMI Healthcare Business Elements.  It is only a limited example, and is non-normative. A properly modularized set of patterns that could be used with MDMI for representing business elements is out of scope for this submission, and is anticipated to be developed in the future.</dct:abstract>
         <sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019 Object Management Group, Inc.</sm:copyright>
-        <sm:filename rdf:datatype="&xsd;string">MDMIExample.rdf</sm:filename>
+        <sm:filename rdf:datatype="&xsd;string">MDMIExampleHealthcareDomainModel.rdf</sm:filename>
         <sm:fileAbbreviation rdf:datatype="&xsd;string">mdmiex</sm:fileAbbreviation>
         <rdfs:label rdf:datatype="&xsd;string">Model Driven Message Interoperability Domain Model Expressed in OWL</rdfs:label>
         <skos:altLabel rdf:datatype="&xsd;string">MDMI-EX</skos:altLabel>
@@ -345,8 +345,7 @@
         <rdfs:subClassOf rdf:resource="&MDMI-GSM;Entity"/>
         <owl:disjointWith rdf:resource="&MDMI-EX;Medication"/>
         <rdfs:label rdf:datatype="&xsd;string">body structure</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an anatomical structure.
-</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">an anatomical structure</skos:definition>
     </owl:Class>
     
 
@@ -358,7 +357,7 @@
         <rdfs:subClassOf rdf:resource="&MDMI-GSM;Activity"/>
         <rdfs:subClassOf rdf:resource="&MDMI-EX;ClinicalSituation"/>
         <rdfs:label rdf:datatype="&xsd;string">clinical activity</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an activity involving involding a healthcare situation</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">an activity involving a healthcare situation</skos:definition>
     </owl:Class>
     
 
