@@ -70,7 +70,10 @@
                 </owl:oneOf>
             </rdfs:Datatype>
         </owl:equivalentClass>
-        <skos:definition rdf:datatype="&xsd;string"></skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">statement mode defines an enumeration of values that qualify the intent of a statement. Values are:
+		* assertion - a statement that the subject situation is true
+		* inquiry - a statement that asks for information about a situation
+		* negation - a statement that the subject situation is false</skos:definition>
     </rdf:Description>
     
 
@@ -426,14 +429,7 @@
     <owl:Class rdf:about="&mdmi-gsm;Activity">
 	    <rdfs:label rdf:datatype="&xsd;string">activity</rdfs:label>
 		<rdfs:subClassOf rdf:resource="&mdmi-gsm;Situation"/>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&mdmi-gsm;InterventionActivity"/>
-                    <rdf:Description rdf:about="&mdmi-gsm;Observation"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:equivalentClass>
+
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&mdmi-gsm;hasPurpose"/>
@@ -441,7 +437,7 @@
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <skos:definition rdf:datatype="&xsd;string">something performed by one or more performers intended to meet a need; a process</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">a situation involving change in a related element</skos:definition>
     </owl:Class>
 	
 	<owl:Class rdf:about="&mdmi-gsm;Actor">
@@ -453,12 +449,12 @@
     <owl:Class rdf:about="&mdmi-gsm;Author">
         <rdfs:subClassOf rdf:resource="&mdmi-gsm;RoleOfActor"/>
         <rdfs:label rdf:datatype="&xsd;string">author</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">someone or some organization that has responsibility for statements made and possibly ownership of a given situation</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">the role of someone or some organization that has responsibility for statements made about a given situation</skos:definition>
     </owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;Classification">
         <rdfs:label rdf:datatype="&xsd;string">classification</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">category for an event, activity, or opinion that has or is requesting an action or a result</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">category for a situation</skos:definition>
     </owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;Date">
@@ -523,7 +519,7 @@
     <owl:Class rdf:about="&mdmi-gsm;Event">
         <rdfs:subClassOf rdf:resource="&mdmi-gsm;Situation"/>
         <rdfs:label rdf:datatype="&xsd;string">event</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">something that happens at a single time point, not over a time period</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">something that is perceived to happen at a single time point, not over a time period</skos:definition>
     </owl:Class>
 	
 	<owl:Class rdf:about="&mdmi-gsm;IdentifiableThing">
@@ -548,7 +544,7 @@
     <owl:Class rdf:about="&mdmi-gsm;Image">
         <rdfs:subClassOf rdf:resource="&mdmi-gsm;Value"/>
         <rdfs:label rdf:datatype="&xsd;string">image</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">data that represents pictoral or graphic information</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">data that represents pictorial or graphic information</skos:definition>
     </owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;InterventionActivity">
@@ -572,7 +568,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">intervention request</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">event that asks for some intervention</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">event that asks for an intervention activity</skos:definition>
     </owl:Class>
 	
 	<owl:Class rdf:about="&mdmi-gsm;Method">
@@ -584,7 +580,7 @@
     <owl:Class rdf:about="&mdmi-gsm;Name">
         <rdfs:subClassOf rdf:resource="&mdmi-gsm;Value"/>
         <rdfs:label rdf:datatype="&xsd;string">name</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">designation for something</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">a designation for something that may or may not be unique</skos:definition>
     </owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;Observation">
@@ -608,13 +604,13 @@
     <owl:Class rdf:about="&mdmi-gsm;Opinion">
         <rdfs:subClassOf rdf:resource="&mdmi-gsm;StateOfAffairs"/>
         <rdfs:label rdf:datatype="&xsd;string">opinion</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">belief held by an actor</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">a situation where an actor has a belief</skos:definition>
     </owl:Class>
     
     <owl:Class rdf:about="&mdmi-gsm;Organization">
         <rdfs:subClassOf rdf:resource="&mdmi-gsm;ResponsibleActor"/>
         <rdfs:label rdf:datatype="&xsd;string">organization</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">social or legal structure formed by one or more human beings</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">a social or legal structure recognized by a legal authority</skos:definition>
     </owl:Class>
     
     <owl:Class rdf:about="&mdmi-gsm;Participant">
@@ -633,13 +629,13 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">participant</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">role of an actor who is involved in some manner in some situation</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">role of an actor who is involved in some situation</skos:definition>
     </owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;Performer">
         <rdfs:subClassOf rdf:resource="&mdmi-gsm;Participant"/>
         <rdfs:label rdf:datatype="&xsd;string">performer</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">person, organization or device that carries out an action</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">role of a person, organization or device that carries out an action</skos:definition>
     </owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;Person">
@@ -678,7 +674,8 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">quality</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">state of affairs representing a characteristic of an entity at a point in time or over a range of time. Examples include the temperature or height of a person at a particular time.</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">state of affairs representing a characteristic of a thing at a point in time or over a range of time</skos:definition>
+        <skos:note rdf:datatype="&xsd;string">Examples include the temperature or height of a person at a particular time</skos:note>		
     </owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;Quantity">
@@ -690,14 +687,14 @@
     <owl:Class rdf:about="&mdmi-gsm;ReferenceRange">
         <rdfs:subClassOf rdf:resource="&mdmi-gsm;Quantity"/>
         <rdfs:label rdf:datatype="&xsd;string">reference range</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">guidance on how to interpret a result by comparison to a normal or recommended spectrum of results</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">normal or recommended spectrum of values intended as guidance on how to interpret a result by comparison to the reference range</skos:definition>
     </owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;RepetitiveSituation">
         <rdfs:subClassOf rdf:resource="&mdmi-gsm;Situation"/>
         <rdfs:label rdf:datatype="&xsd;string">repetitive situation</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">situation that occurs more than once</skos:definition>
-        <skos:note rdf:datatype="&xsd;string">Repetitive situation is a &quot;mixin&quot; class, any situation may be repetitive unless otherwise restricted.</skos:note>
+        <skos:note rdf:datatype="&xsd;string">a repetitive situation is a situation that will be repeat unless otherwise restricted.</skos:note>
 	</owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;RequestEvent">
@@ -746,7 +743,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">role of actor</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">assocation between an actor and some situation, specifying their role in that situation</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">a role is a set of connected behaviors, rights, obligations, beliefs, and norms of some actor in the context of some situation or situations</skos:definition>
     </owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;Situation">
@@ -796,7 +793,7 @@
 
     <owl:Class rdf:about="&mdmi-gsm;Status">
         <rdfs:label rdf:datatype="&xsd;string">status</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">state with respect to some situation as recorded in a statement</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">state with respect to some situation</skos:definition>
     </owl:Class>
     
     <owl:Class rdf:about="&mdmi-gsm;Subject">
