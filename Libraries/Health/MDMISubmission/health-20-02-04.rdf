@@ -1,37 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE rdf:RDF [
-<!ENTITY MDMI-GSM "https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/">
-<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
-
+	<!ENTITY dct "http://purl.org/dc/terms/">
+	<!ENTITY mdmi-gsm "https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY skos "http://www.w3.org/2004/02/skos/core#">
+	<!ENTITY sm "http://www.omg.org/techprocess/ab/SpecificationMetadata/">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
 ]>
-<rdf:RDF xmlns="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/"
-     xml:base="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/"
-     xmlns:MDMI-GSM="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/"
+
+<rdf:RDF xml:base="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/"
      xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:mdmi-gsm="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core/"
      xmlns:sm="http://www.omg.org/techprocess/ab/SpecificationMetadata/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel">
-        <owl:versionIRI rdf:resource="https://www.omg.org/spec/MDMI/20191101/MDMIGenericStatementModel/"/>
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	 
+    <owl:Ontology rdf:about="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/">
+        <rdfs:label rdf:datatype="&xsd;string">Model Driven Message Interoperability (MDMI) Generic Statement Model</rdfs:label>
+        <skos:altLabel rdf:datatype="&xsd;string">MDMI-GSM</skos:altLabel>
+        <dct:abstract rdf:datatype="&xsd;string">This ontology represents an example of what could be done to represent MDMI Healthcare Business Elements.  It is only a limited example, and is non-normative. A properly modularized set of patterns that could be used with MDMI for representing business elements is out of scope for this submission, and is anticipated to be developed in the future.</dct:abstract>
+		<dct:license rdf:datatype="&xsd;anyURI">http://opensource.org/licenses/EPL-2.0</dct:license>
+		<sm:contentLanguage rdf:datatype="&xsd;anyURI">http://www.w3.org/standards/techs/owl#w3c_all</sm:contentLanguage>
+		<sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019-2020 MDIX, Inc.</sm:copyright>
+		<sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019-2020 Model Driven Solutions</sm:copyright>
+		<sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019-2020 Object Management Group, Inc.</sm:copyright>
+        <sm:filename rdf:datatype="&xsd;string">MDMIGenericStatementModel.rdf</sm:filename>
+        <sm:fileAbbreviation rdf:datatype="&xsd;string">mdmi-gsm</sm:fileAbbreviation>
         <owl:imports rdf:resource="http://www.omg.org/techprocess/ab/SpecificationMetadata/"/>
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
-        <sm:contentLanguage rdf:datatype="&xsd;anyURI">http://www.w3.org/standards/techs/owl#w3c_all</sm:contentLanguage>
-        <sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019 MDIX, Inc.</sm:copyright>
-        <dct:abstract rdf:datatype="&xsd;string">This ontology represents an example of what could be done to represent MDMI Healthcare Business Elements.  It is only a limited example, and is non-normative. A properly modularized set of patterns that could be used with MDMI for representing business elements is out of scope for this submission, and is anticipated to be developed in the future.</dct:abstract>
-        <sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019 Object Management Group, Inc.</sm:copyright>
-        <sm:filename rdf:datatype="&xsd;string">MDMIGenericStatementModel.rdf</sm:filename>
-        <sm:fileAbbreviation rdf:datatype="&xsd;string">mdmigsm</sm:fileAbbreviation>
-        <rdfs:label rdf:datatype="&xsd;string">Model Driven Message Interoperability Data Model Expressed in OWL</rdfs:label>
-        <skos:altLabel rdf:datatype="&xsd;string">MDMI-GSM</skos:altLabel>
-        <sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019 Model Driven Solutions</sm:copyright>
-        <dct:license rdf:datatype="&xsd;anyURI">http://opensource.org/licenses/EPL-2.0</dct:license>
+        <owl:versionIRI rdf:resource="https://www.omg.org/spec/MDMI/20200301/MDMIGenericStatementModel/"/>		
     </owl:Ontology>
     
-
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -41,29 +45,23 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/StatementMode -->
-
-
-    <rdf:Description rdf:about="&MDMI-GSM;StatementMode">
-        <owl:equivalentClass>
+    <rdf:Description rdf:about="&mdmi-gsm;StatementMode">
+        <rdfs:label rdf:datatype="&xsd;string">statement mode</rdfs:label> 
+		<owl:equivalentClass>
             <rdfs:Datatype>
                 <owl:oneOf>
                     <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:type rdf:resource="&rdf;List"/>
                         <rdf:first rdf:datatype="&xsd;string">assertion</rdf:first>
                         <rdf:rest>
                             <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:type rdf:resource="&rdf;List"/>
                                 <rdf:first rdf:datatype="&xsd;string">inquiry</rdf:first>
                                 <rdf:rest>
                                     <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:type rdf:resource="&rdf;List"/>
                                         <rdf:first rdf:datatype="&xsd;string">negation</rdf:first>
-                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
                                     </rdf:Description>
                                 </rdf:rest>
                             </rdf:Description>
@@ -72,9 +70,9 @@
                 </owl:oneOf>
             </rdfs:Datatype>
         </owl:equivalentClass>
+        <skos:definition rdf:datatype="&xsd;string"></skos:definition>
     </rdf:Description>
     
-
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -84,442 +82,287 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/about -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;playedBy">
-        <rdfs:domain rdf:resource="&MDMI-GSM;RoleOfActor"/>
-        <rdfs:label rdf:datatype="&xsd;string">played by</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the entity that plays the subject role</skos:definition>
-    </owl:ObjectProperty>    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/about -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;about">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
-        <rdfs:label rdf:datatype="&xsd;string">about</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the topic of some statement, fact, record, or opinion</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/aboutParticipant -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;aboutParticipant">
-        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;about"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Participant"/>
-        <rdfs:label rdf:datatype="&xsd;string">about participant</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the association of a situation and a participant</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/formsOpinion -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;formsOpinion">
-        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;resultsIn"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;Activity"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Opinion"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;formsOpinion">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;resultsIn"/>
+        <rdfs:domain rdf:resource="&mdmi-gsm;Activity"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Opinion"/>
         <rdfs:label rdf:datatype="&xsd;string">forms opinion</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an opinion resulting from an activity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates an opinion resulting from an activity</skos:definition>
     </owl:ObjectProperty>
     
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasAuthor -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasAuthor">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Statement"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Author"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasAuthor">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Statement"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Author"/>
         <rdfs:label rdf:datatype="&xsd;string">has author</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">associates an author with a statement</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">associates an author with a statement by that author</skos:definition>
     </owl:ObjectProperty>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasAuthorOrganizationLegalName -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasAuthorOrganizationLegalName">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Statement"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasAuthorOrganizationLegalName">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Statement"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Name"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="&MDMI-GSM;hasAuthor"/>
-            <rdf:Description rdf:about="&MDMI-GSM;hasOrganizationLegalName"/>
+            <rdf:Description rdf:about="&mdmi-gsm;hasAuthor"/>
+            <rdf:Description rdf:about="&mdmi-gsm;hasOrganizationLegalName"/>
         </owl:propertyChainAxiom>
         <rdfs:label rdf:datatype="&xsd;string">has author organization legal name</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">associates an organization with the property author person legal name</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">associates an author that is an organization with the its legal name</skos:definition>
     </owl:ObjectProperty>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasAuthorPersonLegalName -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasAuthorPersonLegalName">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Statement"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasAuthorPersonLegalName">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Statement"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Name"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="&MDMI-GSM;hasAuthor"/>
-            <rdf:Description rdf:about="&MDMI-GSM;hasPersonLegalName"/>
+            <rdf:Description rdf:about="&mdmi-gsm;hasAuthor"/>
+            <rdf:Description rdf:about="&mdmi-gsm;hasPersonLegalName"/>
         </owl:propertyChainAxiom>
         <rdfs:label rdf:datatype="&xsd;string">has author person legal name</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">associates an author with a person legal name</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">associates an author that is a person with their legal name</skos:definition>
     </owl:ObjectProperty>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasClassification -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasClassification">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Classification"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasClassification">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Situation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Classification"/>
         <rdfs:label rdf:datatype="&xsd;string">has classification</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">classification is a property of any entity representing an extended type or category of the entity.</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">representing an extended type or category associated with the situation</skos:definition>
     </owl:ObjectProperty>
-    
+	
+	<owl:ObjectProperty rdf:about="&mdmi-gsm;hasDate">
+		<rdfs:label>has date</rdfs:label>
+		<rdfs:range rdf:resource="&mdmi-gsm;Date"/>
+		<skos:definition>identifies a specific date</skos:definition>
+	</owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&mdmi-gsm;hasDateTime">
+		<rdfs:label>has date time</rdfs:label>
+		<rdfs:range rdf:resource="&mdmi-gsm;DateTime"/>
+		<skos:definition>identifies a specific date and time of day, excluding the time zone</skos:definition>
+	</owl:ObjectProperty>
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasDevice -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasDevice">
-        <rdfs:domain rdf:resource="&MDMI-GSM;DeviceActivityMethod"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Device"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasDevice">
+        <rdfs:domain rdf:resource="&mdmi-gsm;DeviceSpecificMethod"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Device"/>
         <rdfs:label rdf:datatype="&xsd;string">has device</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">device used or intended for use for an activity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates a device used or intended for use for an activity</skos:definition>
     </owl:ObjectProperty>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasDeviceName -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasDeviceName">
-        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;hasName"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;Device"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasDeviceName">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;hasName"/>
+        <rdfs:domain rdf:resource="&mdmi-gsm;Device"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Name"/>
         <rdfs:label rdf:datatype="&xsd;string">has device name</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">associates a name with a device</skos:definition>
     </owl:ObjectProperty>
-    
+	
+	<owl:ObjectProperty rdf:about="&mdmi-gsm;hasDuration">
+		<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+		<rdfs:label>has duration</rdfs:label>
+		<rdfs:range rdf:resource="&mdmi-gsm;Duration"/>
+		<skos:definition>identifies the duration or date period during which something happened or will happen</skos:definition>
+	</owl:ObjectProperty>
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasEndDateTime -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasEndDateTime">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Temporal"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Date"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasEndDateTime">
+	    <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;hasDateTime"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;DateTime"/>
         <rdfs:label rdf:datatype="&xsd;string">has end date time</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">date and time at which a temporal entity ended or will end</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates a date and time on which something, such as a situation, ended or will end</skos:definition>
     </owl:ObjectProperty>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasLegalName -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasLegalName">
-        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;hasName"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;ResponsibleActor"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasLegalName">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;hasName"/>
+        <rdfs:domain rdf:resource="&mdmi-gsm;ResponsibleActor"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Name"/>
         <rdfs:label rdf:datatype="&xsd;string">has legal name</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">associates legal with name</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">associates a responsible actor with a legal name</skos:definition>
     </owl:ObjectProperty>
-    
+	
+	<owl:ObjectProperty rdf:about="&mdmi-gsm;hasMeasurementValue">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Result"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Quantity"/>
+        <rdfs:label rdf:datatype="&xsd;string">has measurement value</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">relates some result to the value of a measurement involved in that result</skos:definition>
+    </owl:ObjectProperty>
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasMethod -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasMethod">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Activity"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;ActivityMethod"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasMethod">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Activity"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Method"/>
         <rdfs:label rdf:datatype="&xsd;string">has method</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the method for executing an activity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicats a method involved in performing an activity</skos:definition>
     </owl:ObjectProperty>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasName -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasName">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Entity"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasName">
+        <rdfs:domain rdf:resource="&mdmi-gsm;IdentifiableThing"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Name"/>
         <rdfs:label rdf:datatype="&xsd;string">has name</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an association of name to Entity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates a designation for something</skos:definition>
     </owl:ObjectProperty>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasOrganizationLegalName -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasOrganizationLegalName">
-        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;hasLegalName"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;Organization"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
+	
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasOrganizationLegalName">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;hasLegalName"/>
+        <rdfs:domain rdf:resource="&mdmi-gsm;Organization"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Name"/>
         <rdfs:label rdf:datatype="&xsd;string">has organization legal name</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">associates organization with the property legal name</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">associates a legal name with an organization</skos:definition>
     </owl:ObjectProperty>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasParticipant -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasParticipant">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Participant"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasParticipant">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Situation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Participant"/>
         <rdfs:label rdf:datatype="&xsd;string">has participant</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an association of participant to a situation</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates someone or some organization that participates in a given situation</skos:definition>
     </owl:ObjectProperty>
     
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasPerformer -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasPerformer">
-        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;hasParticipant"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;Occurrence"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Performer"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasPerformer">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;hasParticipant"/>
+        <rdfs:domain rdf:resource="&mdmi-gsm;Situation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Performer"/>
         <rdfs:label rdf:datatype="&xsd;string">has performer</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an association of performer to a situation</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">associates an active participant that takes some action with a given situation</skos:definition>
     </owl:ObjectProperty>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasPersonLegalName -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasPersonLegalName">
-        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;hasLegalName"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;Person"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Name"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasPersonLegalName">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;hasLegalName"/>
+        <rdfs:domain rdf:resource="&mdmi-gsm;Person"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Name"/>
         <rdfs:label rdf:datatype="&xsd;string">has person legal name</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">associates entity with person with the property of legal name</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">associates a legal name with an individual</skos:definition>
     </owl:ObjectProperty>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasPurpose -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasPurpose">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Activity"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Classification"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasPurpose">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Activity"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Classification"/>
         <rdfs:label rdf:datatype="&xsd;string">has purpose</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">associates a purpose with an activity </skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates a reason for some occurrence</skos:definition>
+    </owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&mdmi-gsm;hasQualityValue">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Quality"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Value"/>
+        <rdfs:label rdf:datatype="&xsd;string">has quality value</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">an association between quality and Value</skos:definition>
+    </owl:ObjectProperty>
+	
+	<owl:ObjectProperty rdf:about="&mdmi-gsm;hasRepetitionCount">
+        <rdfs:domain rdf:resource="&mdmi-gsm;RepetitiveSituation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Quantity"/>
+        <rdfs:label rdf:datatype="&xsd;string">has repetition count</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates the number of times the situation should be or has been repeated</skos:definition>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasRepetitionDuration">
+        <rdfs:domain rdf:resource="&mdmi-gsm;RepetitiveSituation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Duration"/>
+        <rdfs:label rdf:datatype="&xsd;string">has repetition duration</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates how long every repetitive situation takes</skos:definition>
     </owl:ObjectProperty>
     
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasRepetitionFrequency">
+        <rdfs:domain rdf:resource="&mdmi-gsm;RepetitiveSituation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Duration"/>
+        <rdfs:label rdf:datatype="&xsd;string">has repetition frequency</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates how often a repetitive situation occurs</skos:definition>
+    </owl:ObjectProperty>
 
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasRepetitionSeparation">
+        <rdfs:domain rdf:resource="&mdmi-gsm;RepetitiveSituation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Duration"/>
+        <rdfs:label rdf:datatype="&xsd;string">has repetition separation</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates the amount of time between repetitive actions</skos:definition>
+    </owl:ObjectProperty>
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasStartDateTime -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasStartDateTime">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Temporal"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Date"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasStartDateTime">
+		<rdfs:subPropertyOf rdf:resource="&mdmi-gsm;hasDateTime"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;DateTime"/>
         <rdfs:label rdf:datatype="&xsd;string">has start date time</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">associates the date and time started or will start for a temporal entity </skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates a date and time on which something, such as a situation, began or will begin</skos:definition>
     </owl:ObjectProperty>
     
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasStatus -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;hasStatus">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Status"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;hasStatus">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Situation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Status"/>
         <rdfs:label rdf:datatype="&xsd;string">has status</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">associates a status with a situation</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">associates a state with a situation</skos:definition>
     </owl:ObjectProperty>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/heldBy -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;heldBy">
-        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;hasParticipant"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;Opinion"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Performer"/>
-        <rdfs:label rdf:datatype="&xsd;string">held by</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the Person having an opinion</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/impacts -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;impacts">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Situation"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Situation"/>
+	
+	<owl:ObjectProperty rdf:about="&mdmi-gsm;impacts">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Situation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Situation"/>
         <skos:definition rdf:datatype="&xsd;string">affects, changes</skos:definition>
     </owl:ObjectProperty>
     
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;isAbout">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Situation"/>
+        <rdfs:label rdf:datatype="&xsd;string">is about</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates the topic of some statement, fact, record, or opinion</skos:definition>
+    </owl:ObjectProperty>
 
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;isAboutParticipant">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;isAbout"/>
+        <rdfs:domain rdf:resource="&mdmi-gsm;Situation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Participant"/>
+        <rdfs:label rdf:datatype="&xsd;string">is about participant</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates a participant involved in the situation</skos:definition>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;isHeldBy">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;hasParticipant"/>
+        <rdfs:domain rdf:resource="&mdmi-gsm;Opinion"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Performer"/>
+        <rdfs:label rdf:datatype="&xsd;string">is held by</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates the individual performer that has expressed an opinion</skos:definition>
+    </owl:ObjectProperty>
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/isOpinionAbout -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;isOpinionAbout">
-        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;about"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;Opinion"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Situation"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;isOpinionAbout">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;isAbout"/>
+        <rdfs:domain rdf:resource="&mdmi-gsm;Opinion"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Situation"/>
         <rdfs:label rdf:datatype="&xsd;string">is opinion about</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a situation which is the subject of an opinion</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates a situation that is the subject of an opinion</skos:definition>
     </owl:ObjectProperty>
     
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;isPlayedBy">
+        <rdfs:domain rdf:resource="&mdmi-gsm;RoleOfActor"/>
+        <rdfs:label rdf:datatype="&xsd;string">is played by</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates something or someone that plays the subject role</skos:definition>
+    </owl:ObjectProperty>    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/isStatementAbout -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;isStatementAbout">
-        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;about"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;Statement"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Situation"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;isStatementAbout">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;isAbout"/>
+        <rdfs:domain rdf:resource="&mdmi-gsm;Statement"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Situation"/>
         <rdfs:label rdf:datatype="&xsd;string">is statement about</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a situation that is the subject of a statement</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates a situation that is the subject of a statement</skos:definition>
     </owl:ObjectProperty>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/mesurementValue -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;mesurementValue">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Result"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Quantity"/>
-        <rdfs:label rdf:datatype="&xsd;string">has numeric value</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a property for measure</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/observes -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;observes">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Observation"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Situation"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;observes">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Observation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Situation"/>
         <rdfs:label rdf:datatype="&xsd;string">observes</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">to see, watch, perceive, or notice</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates the situation that is the subject of something that was perceived, seen, noticed, or observed in some way</skos:definition>
     </owl:ObjectProperty>
     
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/occursOn -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;occursOn">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Temporal"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Date"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;occursOn">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Situation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Date"/>
         <rdfs:label rdf:datatype="&xsd;string">occurs on</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the point in time during which something happens</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates a point in time on which something happens</skos:definition>
     </owl:ObjectProperty>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/qualityValue -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;qualityValue">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Quality"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Value"/>
-        <rdfs:label rdf:datatype="&xsd;string">quality value</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an association between quality and Value</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/repetitionCount -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;repetitionCount">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Repetitive"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Quantity"/>
-        <rdfs:label rdf:datatype="&xsd;string">repetition count</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">how many times the situation should be or has been repeated</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/repetitionDuration -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;repetitionDuration">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Repetitive"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Duration"/>
-        <rdfs:label rdf:datatype="&xsd;string">repetition duration</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">how long every action takes</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/repetitionFrequency -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;repetitionFrequency">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Repetitive"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Duration"/>
-        <rdfs:label rdf:datatype="&xsd;string">repetition frequency</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">how often they occur</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/repetitionSeparation -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;repetitionSeparation">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Repetitive"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Duration"/>
-        <rdfs:label rdf:datatype="&xsd;string">repetition separation</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">how long between action</skos:definition>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/requests -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;requests">
-        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;impacts"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;RequestEvent"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Activity"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;requests">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;impacts"/>
+        <rdfs:domain rdf:resource="&mdmi-gsm;RequestEvent"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Activity"/>
         <rdfs:label rdf:datatype="&xsd;string">requests</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an appeal or order for a desired activity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">specifies an appeal or order for a desired activity</skos:definition>
     </owl:ObjectProperty>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/resultsIn -->
-
-
-    <owl:ObjectProperty rdf:about="&MDMI-GSM;resultsIn">
-        <rdfs:subPropertyOf rdf:resource="&MDMI-GSM;impacts"/>
-        <rdfs:domain rdf:resource="&MDMI-GSM;Occurrence"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;Situation"/>
+    <owl:ObjectProperty rdf:about="&mdmi-gsm;resultsIn">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;impacts"/>
+        <rdfs:domain rdf:resource="&mdmi-gsm;Situation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Situation"/>
         <rdfs:label rdf:datatype="&xsd;string">results in</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">leads to an outcome</skos:definition>
     </owl:ObjectProperty>
     
-
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -529,32 +372,48 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+	 <owl:DatatypeProperty rdf:about="&mdmi-gsm;hasDateTimeValue">
+		<rdfs:label>has date time value</rdfs:label>
+		<rdfs:range rdf:resource="&xsd;dateTime"/>
+		<skos:definition>specifies an actual literal (explicit) date and time</skos:definition>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&mdmi-gsm;hasDateValue">
+		<rdfs:label>has date value</rdfs:label>
+		<rdfs:range rdf:resource="&xsd;string"/>
+		<skos:definition>specifies an actual literal (explicit) date captured in the format specified for xsd:date (i.e., ISO 8601 format), WITHOUT the time or timezone information; the semantics are identical to those of xsd:date</skos:definition>
+		<skos:example>2002-10-10 means October 10, 2002</skos:example>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&mdmi-gsm;hasDurationValue">
+		<rdfs:label>has duration value</rdfs:label>
+		<rdfs:domain rdf:resource="&mdmi-gsm;Duration"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+		<skos:definition>specifies a literal (explicit) duration (amount of time) captured in the format specified for xsd:duration (i.e., ISO 8601 format); the semantics are identical to those of xsd:duration</skos:definition>
+		<skos:example>-P3D means negative 3 days duration. This is used with OffsetDates to specify 3 days before (prior) to some other Date.</skos:example>
+		<skos:example>P1Y means 1 year</skos:example>
+		<skos:example>P1Y2M3DT4H5M6S means 1 year, 2 months, 3 days, 4 hours, 5 minutes, 6 seconds</skos:example>
+		<skos:example>P2M means 2 months</skos:example>
+		<skos:example>P3D means 3 days</skos:example>
+		<skos:example>PT4H means 4 hours</skos:example>
+		<skos:example>PT5M means 5 minutes</skos:example>
+		<skos:example>PT6S means 6 seconds</skos:example>
+		<skos:note>Negative durations are used to indicate relative dates that are before (rather than after) some other Date.</skos:note>
+	</owl:DatatypeProperty>
 
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/hasId -->
-
-
-    <owl:DatatypeProperty rdf:about="&MDMI-GSM;hasId">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Entity"/>
+    <owl:DatatypeProperty rdf:about="&mdmi-gsm;hasId">
+        <rdfs:domain rdf:resource="&mdmi-gsm;IdentifiableThing"/>
         <rdfs:label rdf:datatype="&xsd;string">has id</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the association of Identifier to Entity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">associates some sort of identifier with something</skos:definition>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="&mdmi-gsm;hasStatementMode">
+        <rdfs:domain rdf:resource="&mdmi-gsm;Statement"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;StatementMode"/>
+        <rdfs:label rdf:datatype="&xsd;string">has statement mode</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates an intended interpretation of a statement</skos:definition>
     </owl:DatatypeProperty>
     
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/statementHasMode -->
-
-
-    <owl:DatatypeProperty rdf:about="&MDMI-GSM;statementHasMode">
-        <rdfs:domain rdf:resource="&MDMI-GSM;Statement"/>
-        <rdfs:range rdf:resource="&MDMI-GSM;StatementMode"/>
-        <rdfs:label rdf:datatype="&xsd;string">statement has mode</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the intended interpretation of a statement</skos:definition>
-    </owl:DatatypeProperty>
-    
-
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -564,585 +423,417 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Activity -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Activity">
+    <owl:Class rdf:about="&mdmi-gsm;Activity">
+	    <rdfs:label rdf:datatype="&xsd;string">activity</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&mdmi-gsm;Situation"/>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&MDMI-GSM;InterventionActivity"/>
-                    <rdf:Description rdf:about="&MDMI-GSM;Observation"/>
+                    <rdf:Description rdf:about="&mdmi-gsm;InterventionActivity"/>
+                    <rdf:Description rdf:about="&mdmi-gsm;Observation"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Occurrence"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;hasPurpose"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+                <owl:onProperty rdf:resource="&mdmi-gsm;hasPurpose"/>
+				<owl:onClass rdf:resource="&mdmi-gsm;Classification"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label rdf:datatype="&xsd;string">activity</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an occurrence performed by one or more performers intended to meet a need. A.K.A. a process.</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">something performed by one or more performers intended to meet a need; a process</skos:definition>
     </owl:Class>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/ActivityMethod -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;ActivityMethod">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Entity"/>
-        <rdfs:label rdf:datatype="&xsd;string">activity method</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a technique or device used or applied in a temporary state during an activity</skos:definition>
+	
+	<owl:Class rdf:about="&mdmi-gsm;Actor">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;IdentifiableThing"/>
+        <rdfs:label rdf:datatype="&xsd;string">actor</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">something or someone that is capable of performing activities or participating in some situation</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Author -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Author">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;RoleOfActor"/>
+    <owl:Class rdf:about="&mdmi-gsm;Author">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;RoleOfActor"/>
         <rdfs:label rdf:datatype="&xsd;string">author</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">A role of an actor that originates the Occurrence and has responsibility for the Statement given and ownership of the Situation
-</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">someone or some organization that has responsibility for statements made and possibly ownership of a given situation</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Classification -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Classification">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+    <owl:Class rdf:about="&mdmi-gsm;Classification">
         <rdfs:label rdf:datatype="&xsd;string">classification</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">defines the type of clinical event, activity, or opinion that has or is requesting an action or a result</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">category for an event, activity, or opinion that has or is requesting an action or a result</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Date -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Date">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+    <owl:Class rdf:about="&mdmi-gsm;Date">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Value"/>
         <rdfs:label rdf:datatype="&xsd;string">date</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a point or period of time</skos:definition>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&mdmi-gsm;hasDateValue"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>date</rdfs:label>
+		<skos:definition>calendar day on some calendar</skos:definition>
     </owl:Class>
-    
+	
+	<owl:Class rdf:about="&mdmi-gsm;DateTime">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Value"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&mdmi-gsm;hasDateTimeValue"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;dateTime"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>date time</rdfs:label>
+		<skos:definition>combination of a date and a time, without a time zone</skos:definition>
+	</owl:Class>
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Device -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Device">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;actor"/>
+    <owl:Class rdf:about="&mdmi-gsm;Device">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Actor"/>
         <rdfs:label rdf:datatype="&xsd;string">device</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a manufactured item used in an activity without being substantially changed through that activity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">manufactured tool used in an activity without being substantially changed through that activity</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/DeviceActivityMethod -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;DeviceActivityMethod">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;ActivityMethod"/>
-        <rdfs:label rdf:datatype="&xsd;string">device activity method</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the method of the device for the activity</skos:definition>
+    <owl:Class rdf:about="&mdmi-gsm;DeviceSpecificMethod">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Method"/>
+        <rdfs:label rdf:datatype="&xsd;string">device-specific method</rdfs:label>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-gsm;hasDevice"/>
+				<owl:someValuesFrom rdf:resource="&mdmi-gsm;Device"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:definition rdf:datatype="&xsd;string">method employed with or by a device with respect to some situation</skos:definition>
+        <skos:note rdf:datatype="&xsd;string">The same method may apply to more than one device.</skos:note>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Duration -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Duration">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
-        <rdfs:label rdf:datatype="&xsd;string">duration</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the time between the start and the end of points in time</skos:definition>
+    <owl:Class rdf:about="&mdmi-gsm;Duration">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Value"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&mdmi-gsm;hasDurationValue"/>
+				<owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+				<owl:onDataRange rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>duration</rdfs:label>
+		<skos:definition>interval of time of some specific length</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Entity -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Entity">
-        <rdfs:label rdf:datatype="&xsd;string">entity</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a thing with distinct and independent existence</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Event -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Event">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Occurrence"/>
+    <owl:Class rdf:about="&mdmi-gsm;Event">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Situation"/>
         <rdfs:label rdf:datatype="&xsd;string">event</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">An occurrence that is conceived of happening in a single time point, not over a time period.</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">something that happens at a single time point, not over a time period</skos:definition>
     </owl:Class>
-    
+	
+	<owl:Class rdf:about="&mdmi-gsm;IdentifiableThing">
+        <rdfs:label rdf:datatype="&xsd;string">identifiable thing</rdfs:label>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-gsm;hasId"/>
+				<owl:onDataRange rdf:resource="&xsd;string"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-gsm;hasName"/>
+				<owl:onClass rdf:resource="&mdmi-gsm;Name"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:definition rdf:datatype="&xsd;string">something that has a distinct and independent existence and that can be identified in some way</skos:definition>
+    </owl:Class>
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Image -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Image">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+    <owl:Class rdf:about="&mdmi-gsm;Image">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Value"/>
         <rdfs:label rdf:datatype="&xsd;string">image</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">data that represents pictoral or graphic information</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/InterventionActivity -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;InterventionActivity">
+    <owl:Class rdf:about="&mdmi-gsm;InterventionActivity">
         <rdfs:label rdf:datatype="&xsd;string">intervention activity</rdfs:label>
-	    <rdfs:subClassOf rdf:resource="&MDMI-GSM;Activity"/>		
-        <skos:definition rdf:datatype="&xsd;string">an activity with the intent to alter a current state of affairs</skos:definition>
+	    <rdfs:subClassOf rdf:resource="&mdmi-gsm;Activity"/>		
+        <skos:definition rdf:datatype="&xsd;string">activity with the intent to alter a current state of affairs</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/InterventionRequest -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;InterventionRequest">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;RequestEvent"/>
+    <owl:Class rdf:about="&mdmi-gsm;InterventionRequest">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;RequestEvent"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;requests"/>
-                <owl:allValuesFrom rdf:resource="&MDMI-GSM;InterventionActivity"/>
+                <owl:onProperty rdf:resource="&mdmi-gsm;requests"/>
+                <owl:allValuesFrom rdf:resource="&mdmi-gsm;InterventionActivity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;requests"/>
-                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                <owl:onProperty rdf:resource="&mdmi-gsm;requests"/>
+				<owl:someValuesFrom rdf:resource="&mdmi-gsm;InterventionActivity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">intervention request</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the association of an intervention and a request</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">event that asks for some intervention</skos:definition>
     </owl:Class>
-    
+	
+	<owl:Class rdf:about="&mdmi-gsm;Method">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;IdentifiableThing"/>
+        <rdfs:label rdf:datatype="&xsd;string">method</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">technique used or applied to accomplish something</skos:definition>
+    </owl:Class>
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Name -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Name">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+    <owl:Class rdf:about="&mdmi-gsm;Name">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Value"/>
         <rdfs:label rdf:datatype="&xsd;string">name</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the label of a thing that is used to communicate its identity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">designation for something</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Observation -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Observation">
-	    <rdfs:subClassOf rdf:resource="&MDMI-GSM;Activity"/>
+    <owl:Class rdf:about="&mdmi-gsm;Observation">
+	    <rdfs:subClassOf rdf:resource="&mdmi-gsm;Activity"/>
         <rdfs:label rdf:datatype="&xsd;string">observation</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">activities that identify a specific situation as understood by an observer</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">activity that identifies or documents a specific situation as understood by an observer</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/ObservationRequest -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;ObservationRequest">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;RequestEvent"/>
+    <owl:Class rdf:about="&mdmi-gsm;ObservationRequest">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;RequestEvent"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;requests"/>
-                <owl:allValuesFrom rdf:resource="&MDMI-GSM;Observation"/>
+                <owl:onProperty rdf:resource="&mdmi-gsm;requests"/>
+                <owl:allValuesFrom rdf:resource="&mdmi-gsm;Observation"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">observation request</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a request for an observation that will be carried out in the future</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">request for an observation that will be carried out in the future</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Occurrence -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Occurrence">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Situation"/>
-        <rdfs:label rdf:datatype="&xsd;string">occurrence</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">represents one or more entities and their relationships changing over time (an activity) or changing at a specific time (an event)
-</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Opinion -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Opinion">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;StateOfAffairs"/>
+    <owl:Class rdf:about="&mdmi-gsm;Opinion">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;StateOfAffairs"/>
         <rdfs:label rdf:datatype="&xsd;string">opinion</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a belief held by an actor</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">belief held by an actor</skos:definition>
     </owl:Class>
     
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Organization -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Organization">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;ResponsibleActor"/>
+    <owl:Class rdf:about="&mdmi-gsm;Organization">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;ResponsibleActor"/>
         <rdfs:label rdf:datatype="&xsd;string">organization</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a social or legal structure formed by human beings.</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">social or legal structure formed by one or more human beings</skos:definition>
     </owl:Class>
     
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Participant -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Participant">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;RoleOfActor"/>
+    <owl:Class rdf:about="&mdmi-gsm;Participant">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;RoleOfActor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;playedBy"/>
-                <owl:allValuesFrom rdf:resource="&MDMI-GSM;ResponsibleActor"/>
+                <owl:onProperty rdf:resource="&mdmi-gsm;isPlayedBy"/>
+                <owl:allValuesFrom rdf:resource="&mdmi-gsm;ResponsibleActor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;playedBy"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="&mdmi-gsm;isPlayedBy"/>
+				<owl:onClass rdf:resource="&mdmi-gsm;ResponsibleActor"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">participant</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a role of the actor who is involved in some manner in the Occurrence.
-</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">role of an actor who is involved in some manner in some situation</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Performer -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Performer">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Participant"/>
+    <owl:Class rdf:about="&mdmi-gsm;Performer">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Participant"/>
         <rdfs:label rdf:datatype="&xsd;string">performer</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a person, organization or device that carries out an action</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">person, organization or device that carries out an action</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Person -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Person">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;ResponsibleActor"/>
+    <owl:Class rdf:about="&mdmi-gsm;Person">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;ResponsibleActor"/>
         <rdfs:label rdf:datatype="&xsd;string">person</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an individual of the species homo sapiens.</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">individual of the species homo sapiens</skos:definition>
     </owl:Class>
     
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/PhysicalLocation -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;PhysicalLocation">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Entity"/>
+    <owl:Class rdf:about="&mdmi-gsm;PhysicalLocation">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;IdentifiableThing"/>
         <rdfs:label rdf:datatype="&xsd;string">physical location</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated. May be a static building (or room therein) or a moving location (e.g., ambulance, helicopter, aircraft, train, truck, ship, etc.)  </skos:definition>
-    </owl:Class>
-    
+        <skos:definition rdf:datatype="&xsd;string">place where services are provided and resources and participants may be stored, found, contained, or accommodated</skos:definition>
+        <skos:note rdf:datatype="&xsd;string">May be a static building (or room therein) or a moving location (e.g., ambulance, helicopter, aircraft, train, truck, ship, etc.)</skos:note>
+	</owl:Class>
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Quality -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Quality">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;StateOfAffairs"/>
+    <owl:Class rdf:about="&mdmi-gsm;Quality">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;StateOfAffairs"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;about"/>
-                <owl:allValuesFrom rdf:resource="&MDMI-GSM;Entity"/>
+                <owl:onProperty rdf:resource="&mdmi-gsm;isAbout"/>
+                <owl:allValuesFrom rdf:resource="&mdmi-gsm;IdentifiableThing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;about"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="&mdmi-gsm;isAbout"/>
+ 				<owl:onClass rdf:resource="&mdmi-gsm;IdentifiableThing"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;qualityValue"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="&mdmi-gsm;hasQualityValue"/>
+ 				<owl:onClass rdf:resource="&mdmi-gsm;Value"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">quality</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a quality is a state of affairs representing a characteristic of an entity at a point in time or over a range of time. Examples include the temperature or height of a person at a particular time.</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">state of affairs representing a characteristic of an entity at a point in time or over a range of time. Examples include the temperature or height of a person at a particular time.</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Quantity -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Quantity">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+    <owl:Class rdf:about="&mdmi-gsm;Quantity">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Value"/>
         <rdfs:label rdf:datatype="&xsd;string">quantity</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a number is a value representing a quantifiable amount of some quality or characteristic</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">value representing a quantifiable amount of some quality or characteristic</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/ReferenceRange -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;ReferenceRange">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Quantity"/>
+    <owl:Class rdf:about="&mdmi-gsm;ReferenceRange">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Quantity"/>
         <rdfs:label rdf:datatype="&xsd;string">reference range</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">guidance on how to interpret a result by comparison to a normal or recommended spectrum of results</skos:definition>
     </owl:Class>
-    
 
+    <owl:Class rdf:about="&mdmi-gsm;RepetitiveSituation">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Situation"/>
+        <rdfs:label rdf:datatype="&xsd;string">repetitive situation</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">situation that occurs more than once</skos:definition>
+        <skos:note rdf:datatype="&xsd;string">Repetitive situation is a &quot;mixin&quot; class, any situation may be repetitive unless otherwise restricted.</skos:note>
+	</owl:Class>
 
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Repetitive -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Repetitive">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Situation"/>
-        <rdfs:label rdf:datatype="&xsd;string">repetitive</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a situation that repeats. Repetitive is a &quot;mixin&quot; class, any situation may be repetitive unless otherwise restricted</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/RequestEvent -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;RequestEvent">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Event"/>
+    <owl:Class rdf:about="&mdmi-gsm;RequestEvent">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Event"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;requests"/>
+                <owl:onProperty rdf:resource="&mdmi-gsm;requests"/>
                 <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">request event</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a request event is an event that requests the initiation of an activity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">event that requests the initiation of an activity</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/ResponsibleActor -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;ResponsibleActor">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;actor"/>
+    <owl:Class rdf:about="&mdmi-gsm;ResponsibleActor">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Actor"/>
         <rdfs:label rdf:datatype="&xsd;string">responsible actor</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a person or organization capable of participating and taking responsibility for activities</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">person or organization capable of participating and taking responsibility for activities</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Result -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Result">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+    <owl:Class rdf:about="&mdmi-gsm;Result">
+	    <rdfs:subClassOf rdf:resource="&mdmi-gsm;IdentifiableThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;mesurementValue"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="&mdmi-gsm;hasMeasurementValue"/>
+ 				<owl:onClass rdf:resource="&mdmi-gsm;Quantity"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">result</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the measurement resulting from the action of an observation, event, or activity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">something resulting from the action of an observation, event, or activity</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/RoleOfActor -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;RoleOfActor">
+    <owl:Class rdf:about="&mdmi-gsm;RoleOfActor">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;playedBy"/>
-                <owl:allValuesFrom rdf:resource="&MDMI-GSM;actor"/>
+                <owl:onProperty rdf:resource="&mdmi-gsm;isPlayedBy"/>
+                <owl:allValuesFrom rdf:resource="&mdmi-gsm;Actor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;playedBy"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="&mdmi-gsm;isPlayedBy"/>
+  				<owl:onClass rdf:resource="&mdmi-gsm;Actor"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">role of actor</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">How an actor is associated with a situation</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">assocation between an actor and some situation, specifying their role in that situation</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Situation -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Situation">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Entity"/>
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Temporal"/>
-        <rdfs:label rdf:datatype="&xsd;string">situation</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an identifiable entity composed of an arrangement of entities and the relations between them over a time interval </skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/SoftwareAgent -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;SoftwareAgent">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;actor"/>
-        <rdfs:label rdf:datatype="&xsd;string">software agent</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an application executed on a computer</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/StateOfAffairs -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;StateOfAffairs">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Situation"/>
-        <rdfs:label rdf:datatype="&xsd;string">state of affairs</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a state of affairs is a static condition or &quot;state&quot; consisting of a set of entities, properties and the relationships between them over a time period.
-</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Statement -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Statement">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Event"/>
-        <rdfs:label rdf:datatype="&xsd;string">statement</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the event of an actor, performing as an author, to assert or record a fact, belief or situation</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Status -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Status">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
-        <rdfs:label rdf:datatype="&xsd;string">status</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">
-
-The state of a situation contained in a statement.</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Subject -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Subject">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Participant"/>
-        <rdfs:subClassOf>
+    <owl:Class rdf:about="&mdmi-gsm;Situation">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;IdentifiableThing"/>
+		<rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;playedBy"/>
-                <owl:allValuesFrom rdf:resource="&MDMI-GSM;Person"/>
+                <owl:onProperty rdf:resource="&mdmi-gsm;hasEndDateTime"/>
+  				<owl:onClass rdf:resource="&mdmi-gsm;DateTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;playedBy"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+                <owl:onProperty rdf:resource="&mdmi-gsm;hasStartDateTime"/>
+  				<owl:onClass rdf:resource="&mdmi-gsm;DateTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-gsm;occursOn"/>
+  				<owl:onClass rdf:resource="&mdmi-gsm;Date"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="&xsd;string">situation</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">identifiable thing that is composed of an arrangement of entities and the relations between them over a time interval </skos:definition>
+    </owl:Class>
+    
+    <owl:Class rdf:about="&mdmi-gsm;SoftwareAgent">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Actor"/>
+        <rdfs:label rdf:datatype="&xsd;string">software agent</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">application executed on a computer</skos:definition>
+    </owl:Class>
+
+    <owl:Class rdf:about="&mdmi-gsm;StateOfAffairs">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Situation"/>
+        <rdfs:label rdf:datatype="&xsd;string">state of affairs</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">static condition or &quot;state&quot; consisting of a set of entities, properties and the relationships between them over a time period</skos:definition>
+    </owl:Class>
+
+    <owl:Class rdf:about="&mdmi-gsm;Statement">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Event"/>
+        <rdfs:label rdf:datatype="&xsd;string">statement</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">event wherein an actor, performing as an author, asserts or records a fact, belief or situation</skos:definition>
+    </owl:Class>
+
+    <owl:Class rdf:about="&mdmi-gsm;Status">
+        <rdfs:label rdf:datatype="&xsd;string">status</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">state with respect to some situation as recorded in a statement</skos:definition>
+    </owl:Class>
+    
+    <owl:Class rdf:about="&mdmi-gsm;Subject">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Participant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-gsm;isPlayedBy"/>
+                <owl:allValuesFrom rdf:resource="&mdmi-gsm;Person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-gsm;isPlayedBy"/>
+  				<owl:onClass rdf:resource="&mdmi-gsm;Person"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">subject</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">the principle target on which an action happens.</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">principle target on which an action happens</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Substance -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Substance">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Entity"/>
+    <owl:Class rdf:about="&mdmi-gsm;Substance">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;IdentifiableThing"/>
         <rdfs:label rdf:datatype="&xsd;string">substance</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a homogeneous material with a definite composition</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">homogeneous material with a definite composition</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Temporal -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Temporal">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;hasEndDateTime"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;hasStartDateTime"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&MDMI-GSM;occursOn"/>
-                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label rdf:datatype="&xsd;string">temporal</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">something that exists over time</skos:definition>
-    </owl:Class>
-    
-
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Text -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Text">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Value"/>
+    <owl:Class rdf:about="&mdmi-gsm;Text">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Value"/>
         <rdfs:label rdf:datatype="&xsd;string">text</rdfs:label>
         <skos:definition rdf:datatype="&xsd;string">unstructured data presented in written form - physical or virtual</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/Value -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;Value">
+    <owl:Class rdf:about="&mdmi-gsm;Value">
         <rdfs:label rdf:datatype="&xsd;string">value</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an atomic. immutable piece of information without a specific lifetime or identity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">an atomic, immutable piece of information without a specific lifetime or identity</skos:definition>
     </owl:Class>
-    
 
-
-    <!-- https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/actor -->
-
-
-    <owl:Class rdf:about="&MDMI-GSM;actor">
-        <rdfs:subClassOf rdf:resource="&MDMI-GSM;Entity"/>
-        <rdfs:label rdf:datatype="&xsd;string">actor</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">an entity capable of performing activities</skos:definition>
-    </owl:Class>
 </rdf:RDF>
 
