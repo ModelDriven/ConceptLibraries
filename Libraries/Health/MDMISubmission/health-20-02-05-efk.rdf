@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY dct "http://purl.org/dc/terms/">
+	<!ENTITY mdmi-ex "https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/">
+	<!ENTITY mdmi-gsm "https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY skos "http://www.w3.org/2004/02/skos/core#">
+	<!ENTITY sm "http://www.omg.org/techprocess/ab/SpecificationMetadata/">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+
+<rdf:RDF xml:base="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/"
+     xmlns:dct="http://purl.org/dc/terms/"
+	 xmlns:mdmi-ex="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/"
+     xmlns:mdmi-gsm="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core/"
+     xmlns:sm="http://www.omg.org/techprocess/ab/SpecificationMetadata/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	 
+	<owl:Ontology rdf:about="https://www.omg.org/spec/MDMI/MDMIExampleHealthcareDomainModel/">
+        <rdfs:label rdf:datatype="&xsd;string">Model Driven Message Interoperability (MDMI) Example Healthcare Domain Model</rdfs:label>
+        <skos:altLabel rdf:datatype="&xsd;string">mdmi-ex</skos:altLabel>
+        <dct:abstract rdf:datatype="&xsd;string">This ontology represents a healthcare specific example of what could be done to represent MDMI Healthcare Business Elements.  It is only a limited example, and is non-normative. A properly modularized set of patterns that could be used with MDMI for representing business elements is out of scope for this submission, and is anticipated to be developed in the future.</dct:abstract>
+		<dct:license rdf:datatype="&xsd;anyURI">http://opensource.org/licenses/EPL-2.0</dct:license>
+		<sm:contentLanguage rdf:datatype="&xsd;anyURI">http://www.w3.org/standards/techs/owl#w3c_all</sm:contentLanguage>
+		<sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019-2020 MDIX, Inc.</sm:copyright>
+		<sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019-2020 Model Driven Solutions</sm:copyright>
+		<sm:copyright rdf:datatype="&xsd;string">Copyright (c) 2019-2020 Object Management Group, Inc.</sm:copyright>
+        <sm:filename rdf:datatype="&xsd;string">MDMIExampleHealthcareDomainModel.rdf</sm:filename>
+        <sm:fileAbbreviation rdf:datatype="&xsd;string">mdmi-ex</sm:fileAbbreviation>
+        <owl:imports rdf:resource="http://www.omg.org/techprocess/ab/SpecificationMetadata/"/>
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+		<owl:imports rdf:resource="https://www.omg.org/spec/MDMI/MDMIGenericStatementModel/"/>
+        <owl:versionIRI rdf:resource="https://www.omg.org/spec/MDMI/20200301/MDMIExampleHealthcareDomainModel/"/>		
+    </owl:Ontology>
+    
+	
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:ObjectProperty rdf:about="&mdmi-ex;consumes">
+        <rdfs:domain rdf:resource="&mdmi-ex;MedicationActivity"/>
+        <rdfs:range rdf:resource="&mdmi-ex;Medication"/>
+		<rdfs:label rdf:datatype="&xsd;string">consumes</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates a substance that is taken up, diminished, altered, or disappears in an activity</skos:definition>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&mdmi-ex;hasDosage">
+        <rdfs:domain rdf:resource="&mdmi-ex;MedicationActivity"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Quantity"/>
+        <rdfs:label rdf:datatype="&xsd;string">has dosage</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">specifies an amount of an active ingredient delivered to a person for each medication event</skos:definition>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&mdmi-ex;hasDoseForm">
+        <rdfs:domain rdf:resource="&mdmi-ex;Medication"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Value"/>
+        <rdfs:label rdf:datatype="&xsd;string">has dose form</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates the nature of the material in which a medication is delivered</skos:definition>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&mdmi-ex;hasIngredient">
+        <rdfs:domain rdf:resource="&mdmi-ex;Medication"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Substance"/>
+        <rdfs:label rdf:datatype="&xsd;string">has ingredient</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">relates a medication to some material that is part of its composition</skos:definition>
+    </owl:ObjectProperty>
+    
+
+    <owl:ObjectProperty rdf:about="&mdmi-ex;hasLocation">
+        <rdfs:domain rdf:resource="&mdmi-ex;ClinicalActivity"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;PhysicalLocation"/>
+        <rdfs:label rdf:datatype="&xsd;string">has location</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates a place where an activity is performed</skos:definition>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&mdmi-ex;hasPatient">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;hasParticipant"/>
+        <rdfs:domain rdf:resource="&mdmi-ex;ClinicalSituation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Subject"/>
+        <rdfs:label rdf:datatype="&xsd;string">has patient</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">identifies the patient that is the subject of a clinical statement</skos:definition>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&mdmi-ex;hasRoute">
+        <rdfs:domain rdf:resource="&mdmi-ex;MedicationActivity"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Value"/>
+        <rdfs:label rdf:datatype="&xsd;string">has route</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates some path through which a medication is delivered</skos:definition>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&mdmi-ex;hasSite">
+        <rdfs:domain rdf:resource="&mdmi-ex;ClinicalSituation"/>
+        <rdfs:range rdf:resource="&mdmi-ex;BodyStructure"/>
+        <rdfs:label rdf:datatype="&xsd;string">has site</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates the body structure observed or impacted by a clinical situation</skos:definition>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&mdmi-ex;hasStrength">
+        <rdfs:domain rdf:resource="&mdmi-ex;Medication"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Quantity"/>
+        <rdfs:label rdf:datatype="&xsd;string">has strength</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">specifies the amount of active substance in a medication</skos:definition>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&mdmi-ex;hasVitalSignValue">
+        <rdfs:subPropertyOf rdf:resource="&mdmi-gsm;qualityValue"/>
+        <rdfs:domain rdf:resource="&mdmi-ex;VitalSign"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Quantity"/>
+        <rdfs:label rdf:datatype="&xsd;string">has vital sign value</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">relates some measurement to a vital sign</skos:definition>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&mdmi-ex;laterality">
+        <rdfs:domain rdf:resource="&mdmi-ex;BodyStructure"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Value"/>
+        <rdfs:label rdf:datatype="&xsd;string">laterality</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates a position within a larger body structure</skos:definition>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&mdmi-ex;observesVitalSignValue">
+        <rdfs:domain rdf:resource="&mdmi-ex;VitalSignObservation"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Quantity"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="&mdmi-gsm;observes"/>
+            <rdf:Description rdf:about="&mdmi-ex;hasVitalSignValue"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label rdf:datatype="&xsd;string">observes vital sign value</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">indicates a value observed for a vital sign</skos:definition>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&mdmi-ex;usesDevice">
+        <rdfs:domain rdf:resource="&mdmi-ex;ClinicalActivity"/>
+        <rdfs:range rdf:resource="&mdmi-gsm;Device"/>
+        <rdfs:label rdf:datatype="&xsd;string">uses device</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">specifies a device employed to assist with an activity</skos:definition>
+    </owl:ObjectProperty>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&mdmi-gsm;Method">
+        <owl:disjointWith rdf:resource="&mdmi-gsm;PhysicalLocation"/>
+        <owl:disjointWith rdf:resource="&mdmi-gsm;Situation"/>
+        <owl:disjointWith rdf:resource="&mdmi-gsm;Substance"/>
+        <owl:disjointWith rdf:resource="&mdmi-gsm;Actor"/>
+        <owl:disjointWith rdf:resource="&mdmi-ex;BodyStructure"/>
+        <owl:disjointWith rdf:resource="&mdmi-ex;Medication"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="&mdmi-gsm;PhysicalLocation">
+        <owl:disjointWith rdf:resource="&mdmi-gsm;Situation"/>
+        <owl:disjointWith rdf:resource="&mdmi-gsm;Substance"/>
+        <owl:disjointWith rdf:resource="&mdmi-gsm;Actor"/>
+        <owl:disjointWith rdf:resource="&mdmi-ex;BodyStructure"/>
+        <owl:disjointWith rdf:resource="&mdmi-ex;Medication"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="&mdmi-gsm;Situation">
+        <owl:disjointWith rdf:resource="&mdmi-gsm;Substance"/>
+        <owl:disjointWith rdf:resource="&mdmi-gsm;Actor"/>
+        <owl:disjointWith rdf:resource="&mdmi-ex;BodyStructure"/>
+        <owl:disjointWith rdf:resource="&mdmi-ex;Medication"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="&mdmi-gsm;Substance">
+        <owl:disjointWith rdf:resource="&mdmi-gsm;Actor"/>
+        <owl:disjointWith rdf:resource="&mdmi-ex;BodyStructure"/>
+        <owl:disjointWith rdf:resource="&mdmi-ex;Medication"/>
+    </rdf:Description>
+    
+    <rdf:Description rdf:about="&mdmi-gsm;Actor">
+        <owl:disjointWith rdf:resource="&mdmi-ex;BodyStructure"/>
+        <owl:disjointWith rdf:resource="&mdmi-ex;Medication"/>
+    </rdf:Description>
+
+    <owl:Class rdf:about="&mdmi-ex;AllergicReaction">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Event"/>
+        <rdfs:label rdf:datatype="&xsd;string">allergic reaction</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance</skos:definition>
+    </owl:Class>
+
+    <owl:Class rdf:about="&mdmi-ex;AllergicReactionObservation">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Observation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-gsm;observes"/>
+                <owl:allValuesFrom rdf:resource="&mdmi-ex;AllergicReaction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="&xsd;string">allergic reaction observation</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">observation of an allergic reaction</skos:definition>
+    </owl:Class>
+
+    <owl:Class rdf:about="&mdmi-ex;Allergy">
+        <rdfs:subClassOf rdf:resource="&mdmi-ex;HealthCondition"/>
+        <rdfs:label rdf:datatype="&xsd;string">allergy</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">health condition that results in the body's negative reaction to a substance</skos:definition>
+    </owl:Class>
+    
+    <owl:Class rdf:about="&mdmi-ex;AllergyOpinion">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Opinion"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-gsm;isOpinionAbout"/>
+                <owl:allValuesFrom rdf:resource="&mdmi-ex;Allergy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="&xsd;string">allergy opinion</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">opinion concerning an allergy</skos:definition>
+    </owl:Class>
+    
+    <owl:Class rdf:about="&mdmi-ex;BodyStructure">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;IdentifiableThing"/>
+        <owl:disjointWith rdf:resource="&mdmi-ex;Medication"/>
+        <rdfs:label rdf:datatype="&xsd;string">body structure</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">anatomical structure</skos:definition>
+    </owl:Class>
+
+    <owl:Class rdf:about="&mdmi-ex;ClinicalActivity">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Activity"/>
+        <rdfs:subClassOf rdf:resource="&mdmi-ex;ClinicalSituation"/>
+        <rdfs:label rdf:datatype="&xsd;string">clinical activity</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">activity involving a healthcare situation</skos:definition>
+    </owl:Class>
+ 
+    <owl:Class rdf:about="&mdmi-ex;ClinicalSituation">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-ex;hasSite"/>
+				<owl:onClass rdf:resource="&mdmi-ex;BodyStructure"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="&xsd;string">clinical situation</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">situation involving some process of healthcare</skos:definition>
+    </owl:Class>
+
+    <owl:Class rdf:about="&mdmi-ex;Consult">
+        <rdfs:subClassOf rdf:resource="&mdmi-ex;ClinicalActivity"/>
+        <rdfs:label rdf:datatype="&xsd;string">consult</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">clinical activity that involves obtaining and/or a set of opinions and/or observations by a healthcare provider</skos:definition>
+    </owl:Class>
+    
+    <owl:Class rdf:about="&mdmi-ex;Encounter">
+        <rdfs:subClassOf rdf:resource="&mdmi-ex;ClinicalActivity"/>
+        <rdfs:label rdf:datatype="&xsd;string">encounter</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">clinical activity between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient</skos:definition>
+    </owl:Class>
+ 
+    <owl:Class rdf:about="&mdmi-ex;HealthCondition">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;StateOfAffairs"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-gsm;isAbout"/>
+                <owl:allValuesFrom rdf:resource="&mdmi-gsm;Subject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="&xsd;string">health condition</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">state of affairs for the subject relating to their wellness</skos:definition>
+    </owl:Class>
+
+    <owl:Class rdf:about="&mdmi-ex;ImmunizationActivity">
+        <rdfs:subClassOf rdf:resource="&mdmi-ex;MedicationActivity"/>
+        <rdfs:label rdf:datatype="&xsd;string">immunization activity</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">activity related to providing an immunization to a patient</skos:definition>
+    </owl:Class>
+    
+    <owl:Class rdf:about="&mdmi-ex;Medication">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;IdentifiableThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-ex;hasIngredient"/>
+				<owl:someValuesFrom rdf:resource="&mdmi-gsm;Substance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="&xsd;string">medication</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">substance intended to improve a persons condition</skos:definition>
+    </owl:Class>
+ 
+    <owl:Class rdf:about="&mdmi-ex;MedicationActivity">
+        <rdfs:subClassOf rdf:resource="&mdmi-ex;ClinicalActivity"/>
+        <rdfs:label rdf:datatype="&xsd;string">medication activity</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">activity specialized to a medication; past, current, and future</skos:definition>
+    </owl:Class>
+
+    <owl:Class rdf:about="&mdmi-ex;Procedure">
+        <rdfs:subClassOf rdf:resource="&mdmi-ex;ClinicalActivity"/>
+        <rdfs:label rdf:datatype="&xsd;string">procedure</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">clinical activity whose immediate and primary outcome (post-condition) is the alteration of the physical condition of the subject.</skos:definition>
+    </owl:Class>
+  
+    <owl:Class rdf:about="&mdmi-ex;VitalSign">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Quality"/>
+        <rdfs:subClassOf rdf:resource="&mdmi-ex;HealthCondition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-gsm;isAbout"/>
+                <owl:allValuesFrom rdf:resource="&mdmi-gsm;Subject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-ex;hasVitalSignValue"/>
+				<owl:onClass rdf:resource="&mdmi-gsm;Quantity"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="&xsd;string">vital sign</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">measure of a basic function, characteristic or response of the body</skos:definition>
+    </owl:Class>
+    
+    <owl:Class rdf:about="&mdmi-ex;VitalSignObservation">
+        <rdfs:subClassOf rdf:resource="&mdmi-gsm;Observation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&mdmi-gsm;observes"/>
+                <owl:allValuesFrom rdf:resource="&mdmi-ex;VitalSign"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="&xsd;string">vital sign observation</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">observation of the health condition of vital sign of a person. past, current, and future</skos:definition>
+    </owl:Class>
+	
+</rdf:RDF>
+
