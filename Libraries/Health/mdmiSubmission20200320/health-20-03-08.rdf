@@ -126,7 +126,7 @@
         <rdfs:domain rdf:resource="&mdmi-gsm;Situation"/>
         <rdfs:range rdf:resource="&mdmi-gsm;Classification"/>
         <rdfs:label rdf:datatype="&xsd;string">has classification</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">representing an extended type or category associated with the situation</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">an extended type or category associated with the situation</skos:definition>
     </owl:ObjectProperty>
 	
 	<owl:ObjectProperty rdf:about="&mdmi-gsm;hasDate">
@@ -189,7 +189,7 @@
         <rdfs:domain rdf:resource="&mdmi-gsm;Activity"/>
         <rdfs:range rdf:resource="&mdmi-gsm;Method"/>
         <rdfs:label rdf:datatype="&xsd;string">has method</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">indicats a method involved in performing an activity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates a method involved in performing an activity</skos:definition>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="&mdmi-gsm;hasName">
@@ -248,14 +248,14 @@
         <rdfs:domain rdf:resource="&mdmi-gsm;RepetitiveSituation"/>
         <rdfs:range rdf:resource="&mdmi-gsm;Quantity"/>
         <rdfs:label rdf:datatype="&xsd;string">has repetition count</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">indicates the number of times the situation should be or has been repeated</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates the number of times a situation should be or has been repeated</skos:definition>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="&mdmi-gsm;hasRepetitionDuration">
         <rdfs:domain rdf:resource="&mdmi-gsm;RepetitiveSituation"/>
         <rdfs:range rdf:resource="&mdmi-gsm;Duration"/>
         <rdfs:label rdf:datatype="&xsd;string">has repetition duration</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">indicates how long every repetitive situation takes</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">indicates how long each repetition takes</skos:definition>
     </owl:ObjectProperty>
     
     <owl:ObjectProperty rdf:about="&mdmi-gsm;hasRepetitionFrequency">
@@ -437,13 +437,13 @@
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <skos:definition rdf:datatype="&xsd;string">a situation involving change in a related element</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">a situation involving change in a related elements occurring over a period of time</skos:definition>
     </owl:Class>
 	
 	<owl:Class rdf:about="&mdmi-gsm;Actor">
         <rdfs:subClassOf rdf:resource="&mdmi-gsm;IdentifiableThing"/>
         <rdfs:label rdf:datatype="&xsd;string">actor</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">something or someone that is capable of performing activities or participating in some situation</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">something or someone that is capable of performing activities or participating in some activity</skos:definition>
     </owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;Author">
@@ -604,7 +604,7 @@
     <owl:Class rdf:about="&mdmi-gsm;Opinion">
         <rdfs:subClassOf rdf:resource="&mdmi-gsm;StateOfAffairs"/>
         <rdfs:label rdf:datatype="&xsd;string">opinion</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a situation where an actor has a belief</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">a situation where an actor has a belief over a period of time</skos:definition>
     </owl:Class>
     
     <owl:Class rdf:about="&mdmi-gsm;Organization">
@@ -812,7 +812,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">subject</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">principle target on which an action happens</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">role of a person as a principle target on which an action happens</skos:definition>
     </owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;Substance">
