@@ -725,7 +725,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">result</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">something resulting from the action of an observation, event, or activity</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">something identified or measured from the action of an observation, event, or activity</skos:definition>
     </owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;RoleOfActor">
@@ -743,7 +743,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label rdf:datatype="&xsd;string">role of actor</rdfs:label>
-        <skos:definition rdf:datatype="&xsd;string">a role is a set of connected behaviors, rights, obligations, beliefs, and norms of some actor in the context of some situation or situations</skos:definition>
+        <skos:definition rdf:datatype="&xsd;string">a set of connected behaviors, rights, obligations, beliefs, and norms of some actor in the context of some situation or situations</skos:definition>
     </owl:Class>
 
     <owl:Class rdf:about="&mdmi-gsm;Situation">
