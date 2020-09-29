@@ -1,0 +1,84 @@
+@base <https://www.omg.org/spec/SBRM/Sample/AccountingEquation-Model/> .
+@prefix pattern:  <https://www.omg.org/spec/SBRM/Sample/AccountingEquation-Model/> .
+@prefix sbrm: <https://www.omg.org/spec/SBRM/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix lcc-cr: <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://www.omg.org/spec/SBRM/Sample/AccountingEquation-Model/> 
+	a
+		owl:Ontology
+		;
+	rdfs:label "SBRM Sample Simple Accounting Equation"@en ;
+  owl:imports sbrm: .
+ 
+
+pattern:BalanceSheet a owl:Class;
+  rdfs:subClassOf sbrm:RollUp; 
+  rdfs:label "Balance Sheet" ;
+  rdfs:subClassOf
+    [ a owl:Restriction ;
+      owl:onProperty sbrm:hasTotal ;
+      owl:onClass pattern:Assets;
+      owl:qualifiedCardinality 1
+    ] ;
+  rdfs:subClassOf 
+    [ a owl:Restriction ;
+      owl:onProperty sbrm:hasInput ;
+      owl:onClass pattern:LiabilitiesInput;
+      owl:maxQualifiedCardinality 1
+      ] ; 
+  rdfs:subClassOf 
+    [ a owl:Restriction ;
+      owl:onProperty sbrm:hasInput ;
+      owl:onClass pattern:EquityInput;
+      owl:maxQualifiedCardinality 1
+      ] ; 
+    .
+
+pattern:LiabilitiesInput 
+    rdfs:subClassOf sbrm:RollUpInput,
+    [ a owl:Restriction ;
+        owl:onProperty sbrm:hasNumericFact;
+        owl:onClass pattern:Liabilities ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger],
+    [ a owl:Restriction ;
+        owl:onProperty sbrm:hasSequence;
+        owl:hasValue  "1"^^xsd:nonNegativeInteger] ,
+    [ a owl:Restriction ;
+        owl:onProperty sbrm:isAdded;
+        owl:hasValue  "true"^^xsd:boolean]
+     .
+
+pattern:EquityInput 
+    rdfs:subClassOf sbrm:RollUpInput,
+    [ a owl:Restriction ;
+        owl:onProperty sbrm:hasNumericFact;
+        owl:onClass pattern:Equity ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger];
+    owl:equivalentClass  
+    [ a owl:Restriction ;
+        owl:onProperty sbrm:hasSequence;
+        owl:hasValue  "2"^^xsd:nonNegativeInteger] ,
+    [ a owl:Restriction ;
+        owl:onProperty sbrm:isAdded;
+        owl:hasValue  "true"^^xsd:boolean]
+.
+
+pattern:Assets a owl:Class ;
+  rdfs:subClassOf sbrm:MonetaryFact, sbrm:Debit, sbrm:InstantFact .
+pattern:Liabilities a owl:Class ;
+  rdfs:subClassOf sbrm:MonetaryFact, sbrm:Credit, sbrm:InstantFact .
+pattern:Equity a owl:Class ;
+  rdfs:subClassOf sbrm:MonetaryFact, sbrm:Credit, sbrm:InstantFact .
+
+
+

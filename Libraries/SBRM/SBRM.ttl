@@ -1,0 +1,416 @@
+@base <https://www.omg.org/spec/SBRM/> .
+@prefix sbrm: <https://www.omg.org/spec/SBRM/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix lcc-cr: <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://www.omg.org/spec/SBRM/>
+	a
+		voaf:Vocabulary ,
+		owl:Ontology
+		;
+	rdfs:label "SBRM Ontology"@en ;
+	dct:abstract "Standard Business Report Model Ontology defining generic concepts for report definition."@en ;
+	dct:contributor
+		<https://www.linkedin.com/in/peterivett/>
+		;
+	dct:issued "2019-08-01T00:00:00Z"^^xsd:dateTime ;
+	dct:license "http://opensource.org/licenses/MIT"^^xsd:anyURI ;
+	dct:rights "Copyright (c) 2019-2020 Federated Knowledge, LLC." ;
+	dct:title "Standard Business Report Model Ontology"@en ;
+	vann:preferredNamespacePrefix "sbrm" ;
+	vann:preferredNamespaceUri "https://www.omg.org/spec/SBRM/" ;
+	.
+
+sbrm:Fact a owl:Class ;
+  rdfs:subClassOf 
+  [ a owl:Restriction ;
+   owl:onProperty sbrm:hasReportingEntity;
+   owl:someValuesFrom sbrm:Entity
+   ] ,
+ [ a owl:Restriction ;
+   owl:onProperty sbrm:hasCalendarPeriod;
+   owl:someValuesFrom sbrm:CalendarPeriod;
+   ] ,
+  [ a owl:Restriction ;
+   owl:onProperty sbrm:hasFactValue;
+   owl:someValuesFrom sbrm:FactValue
+   ]
+   .
+sbrm:Entity a owl:Class.
+sbrm:Aspect a owl:Class;
+  skos:altLabel "axis" , "dimension".
+sbrm:CoreAspect a owl:Class;
+  rdfs:subClassOf sbrm:Aspect.
+sbrm:NoncoreAspect a owl:Class;
+  rdfs:subClassOf sbrm:Aspect ;
+  owl:disjointWith sbrm:CoreAspect.  
+sbrm:hasAspect a owl:ObjectProperty.
+sbrm:hasParentheticalExplanation a owl:ObjectProperty; # ISSUE - how to represent a simple string?
+  skos:altLabel "has footnote" ;
+  rdfs:domain sbrm:Fact.
+sbrm:hasReportingEntity a owl:ObjectProperty; 
+  rdfs:subPropertyOf sbrm:hasAspect;
+  rdfs:domain sbrm:Fact;
+  rdfs:range sbrm:Entity.
+
+sbrm:Period
+  a owl:Class ;
+  skos:altLabel "flow", "duration" ;
+	rdfs:subClassOf
+    sbrm:CalendarPeriod,
+		[
+			a owl:Restriction ;
+			owl:onProperty sbrm:hasEndDate ;
+			owl:maxQualifiedCardinality "1" ;
+			owl:onDataRange xsd:dateTime ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty sbrm:hasStartDate ;
+			owl:onDataRange xsd:dateTime ;
+			owl:qualifiedCardinality "1" ;
+		]
+		;
+	rdfs:label "period"@en ;
+	skos:definition "A period of time, with at least a start time, and possibly an end." ;
+	.
+sbrm:Instant
+  a owl:Class ;
+  skos:altLabel "stock" ;
+	rdfs:subClassOf
+    sbrm:CalendarPeriod,
+		[
+			a owl:Restriction ;
+			owl:onProperty sbrm:hasDate ;
+			owl:maxQualifiedCardinality "1" ;
+			owl:onDataRange xsd:dateTime ;
+		] .
+
+
+sbrm:hasStartDate a owl:DatatypeProperty;
+  rdfs:range xs:dateTime.
+sbrm:hasEndDate a owl:DatatypeProperty;
+  rdfs:range xs:dateTime.
+sbrm:hasDate a owl:DatatypeProperty;
+  rdfs:range xs:dateTime.
+sbrm:hasCalendarPeriod a owl:ObjectProperty; 
+  rdfs:subPropertyOf sbrm:hasAspect;
+  rdfs:domain sbrm:Fact;
+  rdfs:range sbrm:CalendarPeriod
+  .
+sbrm:hasPeriod a owl:ObjectProperty; 
+  rdfs:subPropertyOf sbrm:hasCalendarPeriod;
+  rdfs:domain sbrm:PeriodFact;
+  rdfs:range sbrm:Period
+  .
+sbrm:hasInstant a owl:ObjectProperty; 
+  rdfs:subPropertyOf sbrm:hasCalendarPeriod;
+  rdfs:domain sbrm:InstantFact;
+  rdfs:range sbrm:Instant
+  .
+
+sbrm:NumericFact a owl:Class;
+  rdfs:subClassOf sbrm:Fact ;
+  rdfs:subClassOf 
+    [ a owl:Restriction ;
+     owl:onProperty sbrm:hasFactValue ;
+     owl:allValuesFrom sbrm:NumericValue
+    ].
+sbrm:MonetaryFact a owl:Class;
+  rdfs:subClassOf sbrm:NumericFact ;
+  rdfs:subClassOf 
+    [ a owl:Restriction ;
+      owl:onProperty sbrm:hasFactValue ;
+      owl:allValuesFrom sbrm:MonetaryFactValue
+    ].
+   
+sbrm:PeriodFact a owl:Class;
+  rdfs:subClassOf sbrm:Fact ;
+  rdfs:subClassOf 
+    [ a owl:Restriction ;
+     owl:onProperty sbrm:hasCalendarAspect ;
+     owl:allValuesFrom sbrm:Period
+    ].
+sbrm:InstantFact a owl:Class;
+  rdfs:subClassOf sbrm:Fact ;
+  rdfs:subClassOf 
+    [ a owl:Restriction ;
+     owl:onProperty sbrm:hasFactValue ;
+     owl:allValuesFrom sbrm:Instant
+    ].
+
+sbrm:FactValue a owl:Class.
+sbrm:NumericFactValue a owl:Class;
+ rdfs:subClassOf sbrm:FactValue ;
+ rdfs:subClassOf 
+   [ a owl:Restriction ;
+     owl:onProperty sbrm:hasUnit ;
+     owl:onClass sbrm:Unit ;
+     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+     ],
+    [ a owl:Restriction ;
+     owl:onProperty sbrm:hasRounding ;
+     owl:onClass sbrm:Rounding ;
+     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+    ].
+
+sbrm:MonetaryFactValue a owl:Class;
+  rdfs:subClassOf sbrm:NumericFactValue ;
+  rdfs:subClassOf 
+    [ a owl:Restriction ;
+      owl:onProperty sbrm:hasUnit ;
+      owl:onClass sbrm:Currency ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+    ].
+
+sbrm:NonNumericFactValue a owl:Class;
+  rdfs:subClassOf sbrm:FactValue.
+
+sbrm:hasFactValue a owl:ObjectProperty; 
+#  rdfs:subPropertyOf sbrm:hasAspect;
+  rdfs:domain sbrm:Fact;
+  rdfs:range sbrm:FactValue.
+sbrm:hasDataValue a owl:DatatypeProperty;
+  rdfs:domain sbrm:FactValue.
+sbrm:hasNumericDataValue a owl:DatatypeProperty;
+  rdfs:subPropertyOf sbrm:hasDataValue;
+  rdfs:domain sbrm:NumericFactValue;
+  rdfs:range xs:decimal.
+sbrm:hasStringDataValue a owl:DatatypeProperty;
+  rdfs:subPropertyOf sbrm:hasDataValue;
+  rdfs:domain sbrm:StringValue;
+  rdfs:range xs:string.
+
+
+sbrm:Unit a owl:Class.
+sbrm:Currency a owl:Class;
+  rdfs:subClassOf sbrm:Unit.
+sbrm:USD a sbrm:Currency.
+sbrm:hasUnit a owl:ObjectProperty;
+  rdfs:domain sbrm:NumericValue;
+  rdfs:range sbrm:Unit.
+
+sbrm:Rounding a owl:Class.
+sbrm:hasRounding a owl:ObjectProperty;
+  rdfs:domain sbrm:NumericValue;
+  rdfs:range sbrm:Rounding.
+sbrm:hasRoundingDigits a owl:DatatypeProperty;
+  rdfs:domain sbrm:Rounding;
+  rdfs:range xsd:nonNegativeInteger.
+sbrm:INF a sbrm:Rounding.
+sbrm:Round1000 a sbrm:Rounding;
+  owl:equivalentClass [
+    a owl:Restriction;
+    owl:onProperty sbrm:hasRoundingDigits;
+    owl:hasValue "1000"^^xsd:nonNegativeInteger    
+  ]
+  .
+
+sbrm:PeriodType a owl:Class.
+sbrm:Instant a owl:Class;
+  rdfs:subClassOf sbrm:PeriodType.
+sbrm:Duration a owl:Class;
+  rdfs:subClassOf sbrm:PeriodType;  
+  owl:disjointWith sbrm:Instant.
+
+sbrm:BalanceType a owl:Class.
+sbrm:Debit a owl:Class;
+  rdfs:subClassOf sbrm:BalanceType.
+sbrm:Credit a owl:Class;
+  rdfs:subClassOf sbrm:BalanceType;  
+  owl:disjointWith sbrm:Debit.
+
+sbrm:hasParentheticalExplanation a owl:ObjectProperty;
+  rdfs:domain sbrm:Fact
+  .
+
+sbrm:InformationModelDefinition a owl:Class.
+sbrm:AspectArrangementModel a owl:Class.
+sbrm:hasAspectArrangementModel a owl:ObjectProperty;
+  rdfs:domain sbrm:InformationModelDefinition;
+  rdfs:range sbrm:AspectArrangementModel.
+sbrm:ConceptArrangementPattern a owl:Class ;
+  rdfs:subClassOf sbrm:AspectArrangementModel
+.
+sbrm:MemberArrangementPattern a owl:Class ;
+  rdfs:subClassOf sbrm:AspectArrangementModel
+.
+
+sbrm:ReportElement a owl:Class.
+sbrm:hasReportElement a owl:ObjectProperty;
+  rdfs:domain sbrm:InformationModelDefinition;
+  rdfs:range sbrm:ReportElement.
+sbrm:Network a owl:Class ;
+  rdfs:subClassOf sbrm:ReportElement
+.
+sbrm:Table a owl:Class ;
+  rdfs:subClassOf sbrm:ReportElement.
+
+sbrm:Operator a owl:Class.
+sbrm:Sum a sbrm:Operator.
+
+# generic capabilities for concept arranmgement patterns 
+sbrm:NumericInput a owl:Class;
+  rdfs:subClassOf 
+  [ a owl:Restriction ;
+     owl:onProperty sbrm:hasNumericFact ;
+     owl:someValuesFrom sbrm:NumericFact ;
+  ],
+   [ a owl:Restriction ;
+     owl:onProperty sbrm:hasSequence ;
+     owl:someValuesFrom xsd:nonNegativeInteger ;
+  ],
+   [ a owl:Restriction ;
+     owl:onProperty sbrm:isAdded ;
+     owl:someValuesFrom xsd:boolean;
+]  . 
+
+sbrm:hasNumericFact a owl:ObjectProperty ;
+    rdfs:domain sbrm:NumericInput ;
+    rdfs:range sbrm:NumericFact .
+
+sbrm:isAdded a owl:DatatypeProperty ;
+   rdfs:domain sbrm:NumericInput ;
+    rdfs:range xsd:boolean .
+
+sbrm:hasSequence a owl:DatatypeProperty ;
+   rdfs:domain sbrm:NumericInput ;
+    rdfs:range xsd:nonNegativeInteger .
+
+
+
+# RULE - all facts must be for the same period and different Concepts and of same type Period 
+sbrm:RollupShape
+ a sh:NodeShape ;
+ sh:targetClass sbrm:Rollup ;
+ sh:sparql [
+    a sh:SPARQLConstraint ;
+    sh:message "For a Rollup the output must be the sum of the inputs" ;
+    sh:select """
+      SELECT DISTINCT ?this ?total
+      WHERE {
+       {SELECT(SUM(?in) as ?total) WHERE {?this sbrm:hasSumInput/sbrm:hasInput/sbrm:hasNumericFact/sbrm:hasNumericDataValue ?in} 
+       GROUP BY ?this }
+        ?this sbrm:hasOutput ?out.
+       FILTER (?total != ?out)
+      }
+      """ ;
+ ] .
+
+sbrm:RollUp a owl:Class ;
+  rdfs:subClassOf sbrm:ConceptArrangementPattern ;
+  rdfs:subClassOf 
+    [ a owl:Restriction ;
+     owl:onProperty sbrm:hasTotal ;
+     owl:onClass sbrm:NumericFact ;
+     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+     ] ,
+   [ a owl:Restriction ;
+     owl:onProperty sbrm:hasInput ;
+     owl:someValuesFrom sbrm:RollUpInput ;
+]     .
+
+sbrm:hasTotal a owl:ObjectProperty ;
+    rdfs:domain sbrm:RollUp ;
+    rdfs:range sbrm:NumericFact ;
+    .
+sbrm:hasInput a owl:ObjectProperty ;
+    rdfs:domain sbrm:RollUp ;
+    rdfs:range sbrm:RollUpInput .
+
+
+sbrm:RollUpInput a owl:Class ;
+  rdfs:subClassOf sbrm:NumericInput 
+     .
+    
+# RULE - all facts must be for the same period and different Concepts, of type Period
+sbrm:Set a owl:Class ;
+  rdfs:subClassOf sbrm:ConceptArrangementPattern ;
+  rdfs:subClassOf 
+   [ a owl:Restriction ;
+     owl:onProperty sbrm:hasMember ;
+     owl:someValuesFrom sbrm:Fact ;
+]     .
+
+sbrm:hasMember a owl:ObjectProperty ;
+    rdfs:domain sbrm:Set ;
+    rdfs:range sbrm:Fact .
+
+# RULE - all facts must be for the same period and different Concepts, beginning and end of type Instant, Changes of type Period?
+sbrm:RollForward a owl:Class ;
+  rdfs:subClassOf 
+    [ a owl:Restriction ;
+     owl:onProperty sbrm:hasOperator ;
+     owl:hasValue sbrm:Sum
+     ] ,
+    [ a owl:Restriction ;
+     owl:onProperty sbrm:hasBeginning ;
+     owl:onClass sbrm:NumericFact ;
+     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+     ] ,
+    [ a owl:Restriction ;
+     owl:onProperty sbrm:hasEnd ;
+     owl:onClass sbrm:NumericFact ;
+     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+     ] ,
+   [ a owl:Restriction ;
+     owl:onProperty sbrm:hasChange ;
+     owl:someValuesFrom sbrm:NumericFact ;
+]     .
+
+sbrm:hasBeginning a owl:ObjectProperty ;
+    rdfs:domain sbrm:RollForward ;
+    rdfs:range sbrm:NumericFact .
+
+sbrm:hasEnd a owl:ObjectProperty ;
+    rdfs:domain sbrm:RollForward ;
+    rdfs:range sbrm:NumericFact .
+
+sbrm:hasChange a owl:ObjectProperty ;
+    rdfs:domain sbrm:RollForward ;
+    rdfs:range sbrm:NumericFact .
+
+# RULE: all facts must be for the same Concept and the same Period, original and restated of type Period, adjustments of type Instant, diff erent recordDate
+sbrm:Adjustment a owl:Class ;
+  rdfs:subClassOf 
+    [ a owl:Restriction ;
+     owl:onProperty sbrm:hasOperator ;
+     owl:hasValue sbrm:Sum
+     ] ,
+    [ a owl:Restriction ;
+     owl:onProperty sbrm:hasOriginal ;
+     owl:onClass sbrm:NumericFact ;
+     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+     ] ,
+    [ a owl:Restriction ;
+     owl:onProperty sbrm:hasRestated ;
+     owl:onClass sbrm:NumericFact ;
+     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+     ] ,
+   [ a owl:Restriction ;
+     owl:onProperty sbrm:hasAdjustment ;
+     owl:someValuesFrom sbrm:NumericFact ;
+]     .
+
+sbrm:hasOriginal a owl:ObjectProperty ;
+    rdfs:domain sbrm:Adjustment ;
+    rdfs:range sbrm:NumericFact .
+
+sbrm:hasRestated a owl:ObjectProperty ;
+    rdfs:domain sbrm:Adjustment ;
+    rdfs:range sbrm:NumericFact .
+
+sbrm:hasAdjustment a owl:ObjectProperty ;
+    rdfs:domain sbrm:Adjustment ;
+    rdfs:range sbrm:NumericFact .
