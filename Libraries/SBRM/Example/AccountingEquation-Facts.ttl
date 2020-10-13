@@ -1,0 +1,73 @@
+@base <https://www.omg.org/spec/SBRM/Sample/AccountingEquation-Facts/> .
+@prefix sample:  <https://www.omg.org/spec/SBRM/Sample/AccountingEquation-Facts/> .
+@prefix pattern:  <https://www.omg.org/spec/SBRM/Sample/AccountingEquation-Model/> .
+@prefix sbrm: <https://www.omg.org/spec/SBRM/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix lcc-cr: <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://www.omg.org/spec/SBRM/Sample/AccountingEquation-Facts/> 
+a owl:Ontology ;
+  rdfs:label "Accounting Equation Sample Facts"@en ;
+  owl:imports sbrm:, pattern: .
+
+sample:ABC a sbrm:Entity; rdfs:label "ABC Company";
+    owl:sameAs <https://search.gleif.org/#/record/GH259400TOMPUOLS65II>
+    .
+sample:FY-2020 a sbrm:Period;
+  sbrm:hasStartDate "2020-01-01T00:00:00Z"^^xs:dateTime ;
+  sbrm:hasEndDate "2020-12-31T00:00:00Z"^^xs:dateTime ;
+.
+
+sample:ABC-Balance a pattern:BalanceSheet;
+    sbrm:hasTotal sample:Assets;
+    sbrm:hasInput
+    # mix of blank and named nodes 
+    [ sbrm:hasNumericFact sample:Liabilities ;
+        sbrm:hasSequence "1"^^xsd:nonNegativeInteger;
+        ],
+     sample:ABC-EquityInput.
+sample:ABC-EquityInput    
+      a sbrm:EquityInput ;
+        sbrm:hasNumericFact sample:Equity;
+  # try to infer     sbrm:hasSequence "2"^^xsd:nonNegativeInteger;
+        .
+
+
+sample:Assets a pattern:Assets ;
+  sbrm:hasReportingEntity sample:ABC ;
+  sbrm:hasPeriod sample:FY-2020 ;
+  sbrm:hasFactValue sample:AssetsV.
+sample:AssetsV a sbrm:MonetaryFactValue ;
+  sbrm:hasNumericDataValue "5000"^^xs:decimal ;
+  sbrm:hasUnit sbrm:USD ;
+  sbrm:hasRounding sbrm:INF ;
+.
+sample:Liabilities a pattern:Liabilities ;
+  sbrm:hasReportingEntity sample:ABC ;
+  sbrm:hasPeriod sample:FY-2020 ;
+  sbrm:hasFactValue sample:LiabilitiesV.
+sample:LiabilitiesV a sbrm:MonetaryFactValue ;
+  sbrm:hasNumericDataValue "1000"^^xs:decimal ;
+  sbrm:hasUnit sbrm:USD ;
+  sbrm:hasRounding sbrm:INF ;
+.
+# Uses different style with a blank node for the value 
+sample:Equity a pattern:Equity ;
+  sbrm:hasReportingEntity sample:ABC ;
+  sbrm:hasPeriod sample:FY-2020 ;
+  sbrm:hasFactValue 
+    [ a sbrm:MonetaryFactValue ;
+    sbrm:hasNumericDataValue "4000"^^xs:decimal ;
+    sbrm:hasUnit sbrm:USD ;
+    sbrm:hasRounding sbrm:INF ;
+    ]
+.
